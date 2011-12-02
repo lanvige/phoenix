@@ -18,7 +18,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.md"]
 
   s.add_dependency "phoenix_core"
-  
+  s.add_dependency "phoenix_auth"
+
   s.add_dependency "rails", "~> 3.1.3"
   s.add_dependency "jquery-rails"
   s.add_dependency 'haml'
