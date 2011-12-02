@@ -1,4 +1,4 @@
-module phoenix
+module Phoenix
   class User
     include Mongoid::Document
     include Mongoid::Timestamps

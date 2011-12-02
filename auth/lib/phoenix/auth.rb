@@ -1,5 +1,3 @@
-require 'rails/all'
-
 require 'phoenix_core'
 require 'devise'
 

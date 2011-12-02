@@ -1,6 +1,4 @@
 module Phoenix
-  module Auth
-    class BaseController < ActionController::Base
-    end
+  class BaseController < ActionController::Base
   end
 end
