@@ -1,5 +1,5 @@
 module Phoenix
-  class UsersController < Phoenix::Auth::BaseController
+  class UsersController < Phoenix::BaseController
 
     def show
     end

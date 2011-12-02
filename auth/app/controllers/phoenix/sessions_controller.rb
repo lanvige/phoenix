@@ -1,5 +1,5 @@
-module Phoenix
-  class SessionsController < Devise::SessionsController
+#module Phoenix
+  class Phoenix::SessionsController < Devise::SessionsController
 
     # GET /resource/sign_in
     def new
@@ -19,4 +19,4 @@ module Phoenix
       super
     end
   end
-end
+#end

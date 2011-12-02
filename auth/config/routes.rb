@@ -1,12 +1,15 @@
 Phoenix::Core::Engine.routes.draw do
   devise_for :user,
              :class_name => 'Phoenix::User',
-             :controllers => { :registrations => "phoenix/user_registrations",
+             :controllers => { :registrations => "phoenix/registrations",
                                :password      => "devise/passwords",
-                               :sessions      => 'phoenix/user_sessions'} do
-    get "/login", :to => "devise/sessions#new" 
-    get "/logout", :to => "devise/sessions#destroy"
-  end
+                               :sessions      => 'phoenix/sessions'}
 
-  resources :users
+  resources :users, :only => [:edit, :update]
+
+  devise_scope :user do
+    get '/signup' => 'registrations#new', :as => :signup
+    get '/login' => 'sessions#new', :as => :login
+    get "/logout" => "sessions#destroy", :as => :logout
+  end
 end

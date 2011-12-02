@@ -1,4 +1,5 @@
 require 'rails/all'
+require 'haml'
 
 module Phoenix
   module Core
@@ -6,5 +7,4 @@ module Phoenix
 end
 
 require 'phoenix/core/version'
-
 require 'phoenix/core/engine'
