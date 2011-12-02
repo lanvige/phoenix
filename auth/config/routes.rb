@@ -1,2 +1,2 @@
-PhoenixAuth::Engine.routes.draw do
+Phoenix::Core::Engine.routes.draw do
 end
