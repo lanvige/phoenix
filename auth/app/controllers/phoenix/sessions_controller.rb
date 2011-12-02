@@ -3,9 +3,6 @@
 
     # GET /resource/sign_in
     def new
-      Rails.logger.debug { "omniauth1:::::::" }
-      Rails.logger.info "My info message"
-      
       # render :new, :layout => 'login'
     end
 

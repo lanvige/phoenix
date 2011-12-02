@@ -3,6 +3,7 @@ module Phoenix
     include Mongoid::Document
     include Mongoid::Timestamps
     include Mongoid::Slug
+    self.collection_name = 'users' 
     
     # Include default devise modules. Others available are:
     # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
