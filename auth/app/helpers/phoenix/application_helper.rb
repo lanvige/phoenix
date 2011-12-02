@@ -1,4 +1,6 @@
-module PhoenixAuth
-  module ApplicationHelper
+module Phoenix
+  module Auth
+    module ApplicationHelper
+    end
   end
 end

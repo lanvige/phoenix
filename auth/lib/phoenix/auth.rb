@@ -1,5 +1,8 @@
 require 'rails/all'
 
+require 'phoenix_core'
+require 'devise'
+
 module Phoenix
   module Auth
   end

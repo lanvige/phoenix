@@ -1,6 +1,6 @@
 module Phoenix
   module Auth
-    class BaseController < Phoenix::BaseController
+    class BaseController < ActionController::Base
     end
   end
 end
