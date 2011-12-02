@@ -6,7 +6,7 @@ require "phoenix/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "phoenix"
-  s.version     = Phoenix::Core::VERSION
+  s.version     = Phoenix::VERSION
   
   s.author       = 'Lanvige Jiang'
   s.email        = 'lanvige@gmail.com'

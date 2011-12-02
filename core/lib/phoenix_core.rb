@@ -1,4 +1,3 @@
-require "phoenix/core/engine"
+require "phoenix/core"
 
-module PhoenixCore
-end
+

@@ -1,4 +1,6 @@
-require "phoenix_auth/engine"
+require "phoenix/auth/engine"
 
-module PhoenixAuth
+module Phoenix
+  module Auth
+  end
 end

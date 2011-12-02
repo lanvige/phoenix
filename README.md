@@ -1,0 +1,1 @@
+It's a project to show how to use Rails 3 Engine to build a big project.
