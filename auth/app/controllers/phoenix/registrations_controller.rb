@@ -3,10 +3,13 @@ module Phoenix
     #before_filter :check_registrations_open!
 
     def create
+      Rails.logger.debug { "start create.................." }
       super
+      Rails.logger.debug { "finished created.................." }
     end
 
     def new
+      Rails.logger.debug { "start new..................." }
       super
     end
 

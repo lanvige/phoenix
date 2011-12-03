@@ -2,9 +2,12 @@ Phoenix::Core::Engine.routes.draw do
   devise_for :user,
              :class_name => 'Phoenix::User',
              :controllers => { :registrations => "phoenix/registrations",
-                               :password      => "devise/passwords",
-                               :sessions      => 'phoenix/sessions'}
+                               :password      => "phoenix/passwords",
+                               :sessions      => 'phoenix/sessions'},
+             :path_names => { :sign_out => 'logout' }
+end
 
+Phoenix::Core::Engine.routes.draw do
   resources :users, :only => [:edit, :update]
 
   devise_scope :user do

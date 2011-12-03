@@ -1,2 +1,11 @@
 %h1
   hello world
+  
+- if current_user
+  = current_user.name.to_s
+
+%br
+
+= link_to 'login', phoenix.login_path
+%br
+= link_to 'logout', phoenix.logout_path
