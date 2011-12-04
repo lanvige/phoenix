@@ -1,6 +1,10 @@
 module Phoenix
   class UsersController < Phoenix::BaseController
 
+    def new
+      @user = User.new
+    end
+    
     def show
     end
 

@@ -8,6 +8,9 @@ module Phoenix
 
     # POST /resource/sign_in
     def create
+      RubyProf.start
+      Rails.logger.debug { "start login.................." }
+
       authenticate_user!
 
       if user_signed_in?
@@ -20,6 +23,12 @@ module Phoenix
       else
         flash[:error] = 'devise.failure.invalid'
         render :new
+      end
+      Rails.logger.debug { "finished login.................." }
+      results = RubyProf.stop
+      
+      File.open "/Users/lanvige/repos/profile-graph.html", 'a' do |file|
+        RubyProf::GraphHtmlPrinter.new(results).print(file)
       end
     end
 
