@@ -1,30 +1,49 @@
 module Phoenix
-  class RegistrationsController < Devise::RegistrationsController    
-    #before_filter :check_registrations_open!
+  class RegistrationsController < Devise::RegistrationsController
+    include Phoenix::Core::ControllerHelpers
     
-    #layout 'login'
+    #before_filter :check_registrations_open!
+    #ssl_required
+    
+    layout "/phoenix/layouts/login"
 
-    def create
-      RubyProf.start
-      Rails.logger.debug { "start create.................." }
+    def new
       super
-      Rails.logger.debug { "finished created.................." }
-      results = RubyProf.stop
+    end
+    
+    def create
+      @user = build_resource(params[:user])
       
-      File.open "#{RAILS_ROOT}/tmp/profile-graph.html", 'w' do |file|
-        RubyProf::GraphHtmlPrinter.new(results).print(file)
+      if resource.save
+        set_flash_message(:notice, :signed_up)
+        fire_event('phoeinx.user.signup', :user => @user)
+        sign_in_and_redirect(:user, @user)
+      else
+        clean_up_passwords(resource)
+        render_with_scope(:new)
       end
     end
 
-    def new
-      Rails.logger.debug { "start new..................." }
+    # GET /resource/edit
+    def edit
       super
     end
+    
+    # PUT /resource
+    def update
+      super
+    end
+
+    # DELETE /resource
+    def destroy
+      super
+    end
+
 
     private
     def check_registrations_open!
       if AppConfig[:registrations_closed]
-        flash[:error] = t('registrations.closed')
+        flash[:error] = 'registrations.closed'
         redirect_to new_user_session_path
       end
     end
