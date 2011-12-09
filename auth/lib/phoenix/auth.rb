@@ -1,6 +1,5 @@
 require 'phoenix_core'
 require 'devise'
-require 'simple_form'
 
 module Phoenix
   module Auth
