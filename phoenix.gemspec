@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Engine deom 4 rails 3.'
   s.description = 'Engine deom 4 rails 3.'
   
-  s.required_ruby_version     = '>= 1.9.2'
+  s.required_ruby_version = '>= 1.9.2'
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.md"]
 

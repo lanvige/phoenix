@@ -42,5 +42,25 @@ module Phoenix
       UserMailer.registration_confirmation(self).deliver
     end
     
+    def self.current
+      Thread.current[:user]
+    end
+    
+    def self.current=(user)
+      Thread.current[:user] = user
+    end
+    
+    # Generate a friendly string randomically to be used as token.
+    def self.friendly_token
+      SecureRandom.base64(15).tr('+/=', '-_ ').strip.delete("\n")
+    end
+    
+    # Generate a token by looping and ensuring does not already exist.
+    def self.generate_token(column)
+      loop do
+        token = friendly_token
+        break token unless find(:first, :conditions => { column => token })
+      end
+    end
   end
 end

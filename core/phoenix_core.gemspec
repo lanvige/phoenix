@@ -13,6 +13,8 @@ Gem::Specification.new do |s|
   s.summary     = 'Core Engine.'
   s.description = 'Its used for build core structure, dont contain biz.'
 
+  s.required_ruby_version = '>= 1.9.2'
+
   s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.md"]
   s.require_path = 'lib'
   

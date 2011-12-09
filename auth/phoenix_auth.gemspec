@@ -20,8 +20,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency('phoenix_core',  version)
+  s.add_dependency('phoenix_core',   version)
   s.add_dependency 'devise'
-  s.add_dependency 'simple_form'
   s.add_dependency 'mongoid_slug'
 end

@@ -3,6 +3,6 @@ Phoenix::BaseController.class_eval do
   
   private
     def set_current_user
-      Spree::User.current = current_user
+      Phoenix::User.current = current_user
     end
 end
