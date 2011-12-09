@@ -4,5 +4,11 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
+
+//= require require-1.0.2
+//= require underscore-1.2.3
+//= require backbone-0.5.3
 //= require jquery
-//= require_tree .
+
+// require_tree .
+//= require_self
