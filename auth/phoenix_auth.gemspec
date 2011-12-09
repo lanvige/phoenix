@@ -26,4 +26,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'phoenix_core'
   s.add_dependency 'devise'
   s.add_dependency 'simple_form'
+  s.add_dependency 'mongoid_slug'
 end

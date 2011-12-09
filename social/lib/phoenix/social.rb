@@ -1,4 +1,5 @@
 require 'phoenix_core'
+require 'phoenix_auth'
 
 module Phoenix
   module Social
