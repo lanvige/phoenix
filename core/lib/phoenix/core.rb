@@ -11,6 +11,4 @@ module Phoenix
 end
 
 require 'phoenix/core/controller_helpers'
-
-require 'phoenix/core/version'
 require 'phoenix/core/engine'
