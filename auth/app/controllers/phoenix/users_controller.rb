@@ -11,6 +11,7 @@ module Phoenix
     end
     
     def show
+      #redirect_to(root_path)
       @user = User.find_by_slug(params[:id])
     end
 

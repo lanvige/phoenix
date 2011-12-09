@@ -3,6 +3,8 @@ module Phoenix
     include Mongoid::Document
     include Mongoid::Timestamps
     include Mongoid::Slug
+    
+    # Set the collection name in MongoDB
     self.collection_name = 'users' 
     
     # Include default devise modules. Others available are:
