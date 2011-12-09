@@ -1,22 +1,21 @@
-$:.push File.expand_path("../lib", __FILE__)
-
-# Maintain your gem's version:
-require "phoenix/core/version"
+# encoding: UTF-8
+version = File.read(File.expand_path("../../PHOENIX_VERSION", __FILE__)).strip
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "phoenix_core"
-  s.version     = Phoenix::Core::VERSION
+  s.version     = version
   
   s.author       = 'Lanvige Jiang'
   s.email        = 'lanvige@gmail.com'
   s.homepage     = 'http://lanvige.com'
 
-  s.summary     = 'Engine deom 4 rails 3.'
-  s.description = 'Engine deom 4 rails 3.'
+  s.summary     = 'Core Engine.'
+  s.description = 'Its used for build core structure, dont contain biz.'
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.md"]
-
+  s.require_path = 'lib'
+  
   s.add_dependency "rails", "~> 3.1.3"
   s.add_dependency "jquery-rails"
   s.add_dependency 'haml'
