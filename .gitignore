@@ -1,12 +1,7 @@
-#----------------------------------------------------------------------------
+#--------------------------------------------------------------
 # Ignore these files when commiting to a git repository
 #
-# The original version of this file is found here:
-# https://github.com/RailsApps/rails3-application-templates/raw/master/files/gitignore.txt
-#
-# Corrections? Improvements? Create a GitHub issue: 
-# http://github.com/RailsApps/rails3-application-templates/issues
-#----------------------------------------------------------------------------
+#--------------------------------------------------------------
 
 # bundler state
 /.bundle
@@ -16,6 +11,10 @@
 db/*.sqlite3
 /log/*
 tmp/*
+
+# ignore build files
+*.gem
+/gempkg
 
 # various artifacts
 **.war
