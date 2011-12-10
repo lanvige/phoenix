@@ -5,5 +5,3 @@ gem 'rake'
 
 gem 'json'
 gem 'haml'
-gem 'phoenix_foo', :path => 'phoenix_foo'
-gem 'phoenix_foozs', :path => 'phoenix_foozs'
