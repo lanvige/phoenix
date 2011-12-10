@@ -11,11 +11,12 @@ namespace :gem do
   desc "run rake gem for all gems"
   task :build do
     %w(core auth social).each do |gem_name|
-      puts "########################### #{gem_name} #########################"
+      puts "--------------Rebuild PHOENIX #{gem_name} GEM---------------------"
       puts "Deleting #{gem_name}/pkg"
       FileUtils.rm_rf("#{gem_name}/pkg")
       cmd = "cd #{gem_name} && bundle exec rake gem"; puts cmd; system cmd
     end
+    
     puts "Deleting pkg directory"
     FileUtils.rm_rf("pkg")
     cmd = "bundle exec rake gem"; puts cmd; system cmd
@@ -26,15 +27,17 @@ namespace :gem do
     version = File.read(File.expand_path("../PHOENIX_VERSION", __FILE__)).strip
 
     %w(core auth social).each do |gem_name|
-      puts "########################### #{gem_name} #########################"
-      puts "Deleting #{gem_name}/gempkg"
-      FileUtils.rm_rf("#{gem_name}/gempkg")
+      puts "----------Rebuild PHOENIX #{gem_name} and install the GEM-----------"
+      puts "Deleting #{gem_name}/pkg"
+      FileUtils.rm_rf("#{gem_name}/pkg")
       cmd = "cd #{gem_name} && bundle exec rake gem"; puts cmd; system cmd
-      cmd = "cd #{gem_name}/gempkg && gem install phoenix_#{gem_name}-#{version}.gem"; puts cmd; system cmd
+      cmd = "cd #{gem_name}/pkg && gem install phoenix_#{gem_name}-#{version}.gem"; puts cmd; system cmd
     end
-    FileUtils.rm_rf("#{gem_name}/gempkg")
+    
+    puts "----------------Rebuild PHOENIX and install the GEM------------------"
+    FileUtils.rm_rf("./pkg")
     cmd = "bundle exec rake gem"; puts cmd; system cmd
-    cmd = "gem install gempkg/phoenix-#{version}.gem"; puts cmd; system cmd
+    cmd = "gem install pkg/phoenix-#{version}.gem"; puts cmd; system cmd
   end
 end
 

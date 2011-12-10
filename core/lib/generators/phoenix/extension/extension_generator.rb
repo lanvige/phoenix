@@ -20,7 +20,6 @@ module Phoenix
       template "rspec", "#{file_name}/.rspec"
       template "spec/spec_helper.rb.tt", "#{file_name}/spec/spec_helper.rb"
       template "Versionfile", "#{file_name}/Version"
-
     end
   end
 end
