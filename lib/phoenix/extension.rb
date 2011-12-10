@@ -40,7 +40,9 @@ module Phoenix
       directory "config", "#{file_name}/config"
 
       template "Gemfile", "#{file_name}/Gemfile" unless integrated
-      template "spec_helper.rb.tt", "#{file_name}/spec/spec_helper.rb"
+      
+      directory "spec", "#{file_name}/spec"
+
       template "rspec", "#{file_name}/.rspec"
 
       if integrated

@@ -1,2 +1,2 @@
-require 'spree_core'
+require 'phoenix_core'
 require '<%=file_name%>/engine'
