@@ -16,3 +16,4 @@ end
 require 'phoenix/core/controller_helpers'
 require 'phoenix/core/engine'
 require 'phoenix/core/ssl_requirement'
+require 'phoenix/core/development_mail_interceptor'

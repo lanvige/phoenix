@@ -1,5 +1,5 @@
 Phoenix::Core::Engine.routes.draw do
-  devise_for :user,
+  devise_for :users,
              :class_name => 'Phoenix::User',
              :controllers => { :registrations => "phoenix/registrations",
                                :password      => "phoenix/passwords",

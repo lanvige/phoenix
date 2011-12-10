@@ -11,8 +11,8 @@ module Phoenix
     # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable,
-           :timeoutable, :encryptable, :encryptor => 'authlogic_sha512'
-           #:confirmable,
+           :timeoutable, :confirmable,
+           :encryptable, :encryptor => 'authlogic_sha512'
                   
     field :name
     field :email
