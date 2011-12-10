@@ -15,6 +15,7 @@ tmp/*
 # ignore build files
 *.gem
 gempkg/
+pkg/
 
 # various artifacts
 **.war

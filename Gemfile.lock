@@ -3,6 +3,7 @@ GEM
   specs:
     haml (3.1.4)
     json (1.6.3)
+    rake (0.9.2.2)
 
 PLATFORMS
   ruby
@@ -10,3 +11,4 @@ PLATFORMS
 DEPENDENCIES
   haml
   json
+  rake
