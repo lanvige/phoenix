@@ -12,9 +12,10 @@ module Phoenix
     map "-v"        => "version"
     map "--version" => "version"
 
+    
     desc "version", "print the current version"
     def version
-      shell.say "Phoenix #{Phoenix.version}", :green
+      shell.say "Phoenix 0.0.2", :green
     end
 
     desc "extension NAME", "create a new extension with the given name"
