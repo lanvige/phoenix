@@ -1,5 +1,5 @@
-module Spree
+module Phoenix
   class Engine < Rails::Engine
-    engine_name 'spree'
+    engine_name 'phoenix'
   end
 end

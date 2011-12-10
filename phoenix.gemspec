@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.email        = 'lanvige@gmail.com'
   s.homepage     = 'http://lanvige.com'  
 
-  s.files          = Dir["{lib}/**/*"] + ["README.md"]
+  s.files          = Dir["{lib}/**/*"] + ["README.md", "PHOENIX_VERSION"]
   s.require_path   = 'lib'
   s.requirements   << 'none'
   s.bindir         = 'lib/phoenix/bin'

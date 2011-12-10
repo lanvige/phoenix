@@ -2,6 +2,7 @@ require "rubygems"
 require "thor"
 require 'rails/generators/actions'
 require 'phoenix/extension'
+require 'phoenix/version'
 
 module Phoenix
   class CLI < Thor
@@ -15,7 +16,7 @@ module Phoenix
     
     desc "version", "print the current version"
     def version
-      shell.say "Phoenix 0.0.2", :green
+      shell.say "Phoenix #{Phoenix.version}", :green
     end
 
     desc "extension NAME", "create a new extension with the given name"

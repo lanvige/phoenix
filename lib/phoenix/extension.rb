@@ -11,6 +11,7 @@ module Phoenix
 
       class_path = name.include?('/') ? name.split('/') : name.split('::')
       class_path.map! { |m| m.underscore }
+      self.proj_name = name
       self.file_name = 'phoenix_' + class_path.pop.gsub('phoenix_', '')
       self.human_name = name.titleize
       self.class_name = file_name.classify
@@ -19,13 +20,11 @@ module Phoenix
 
       directory "app", "#{file_name}/app"
 
-      empty_directory "#{file_name}/app/controllers"
-      empty_directory "#{file_name}/app/helpers"
-      empty_directory "#{file_name}/app/models"
-      empty_directory "#{file_name}/app/views"
+      empty_directory "#{file_name}/app/controllers/phoenix"
+      empty_directory "#{file_name}/app/helpers/phoenix"
+      empty_directory "#{file_name}/app/models/phoenix"
+      empty_directory "#{file_name}/app/views/phoenix"
       empty_directory "#{file_name}/app/overrides"
-      empty_directory "#{file_name}/config"
-      empty_directory "#{file_name}/config/locals"
 
       directory "lib", "#{file_name}/lib"
       directory "script", "#{file_name}/script"
@@ -37,8 +36,9 @@ module Phoenix
       template "gitignore", "#{file_name}/.gitignore"
       template "extension.gemspec", "#{file_name}/#{file_name}.gemspec"
       template "Versionfile", "#{file_name}/Versionfile"
-      template "config/routes.rb", "#{file_name}/config/routes.rb"
-      template "config/locales/en.yml", "#{file_name}/config/locales/#{file_name}/en.yml"
+      
+      directory "config", "#{file_name}/config"
+
       template "Gemfile", "#{file_name}/Gemfile" unless integrated
       template "spec_helper.rb.tt", "#{file_name}/spec/spec_helper.rb"
       template "rspec", "#{file_name}/.rspec"
@@ -56,6 +56,11 @@ module Phoenix
     end
 
     no_tasks do
+      # File/Lib Name without Phoenix (ex. paypal_express)
+      attr_accessor :proj_name
+    end
+    
+    no_tasks do
       # Human Readable Name (ex. Paypal Express)
       attr_accessor :human_name
     end
@@ -69,6 +74,7 @@ module Phoenix
     def gemfile
       File.expand_path("Gemfile", Dir.pwd)
     end
+    
     # extension is integrated with an existing rails app (as opposed to standalone repository)
     def integrated
       File.exist?(gemfile)
