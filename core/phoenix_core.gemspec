@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.email        = 'lanvige@gmail.com'
   s.homepage     = 'http://lanvige.com'
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.md"]
+  s.files = Dir["{app,config,lib}/**/*"] + ["README.md"]
   s.require_path = 'lib'
   
   s.add_dependency "rails", "~> 3.1.3"
