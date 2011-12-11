@@ -56,6 +56,7 @@ pkg/
 
 # Netbeans project directory
 /nbproject/
+/.idea/
 
 # Textmate project files
 /*.tmproj
