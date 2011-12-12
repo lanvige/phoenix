@@ -1,10 +1,8 @@
 %p
-  Welcome to Zhuke.me
-  /= @resource.email
+  Welcome using Phoenix Engine: 
+  = @resource.email
   !
 
 %p 
   You can confirm your account through the link below:
-
-%p
-  = @user_confirmation_url
+  /= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)

@@ -11,13 +11,14 @@ module Phoenix
       super
     end
     
-    def create1
+    def create
       @user = build_resource(params[:user])
       
       if resource.save
         set_flash_message(:notice, :signed_up)
         fire_event('phoeinx.user.signup', :user => @user)
-        sign_in_and_redirect(:user, @user)
+        #sign_in_and_redirect(:user, @user)
+        redirect_to phoenix.root_path
       else
         clean_up_passwords(resource)
         render_with_scope(:new)
