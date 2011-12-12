@@ -8,10 +8,17 @@ module Phoenix
     layout "/phoenix/layouts/login"
 
     def new
+      RubyProf.start
       super
+      results = RubyProf.stop
+      
+      File.open "/Users/lanvige/repos/profile-register-strat.html", 'a' do |file|
+        RubyProf::GraphHtmlPrinter.new(results).print(file)
+      end
     end
     
     def create
+      RubyProf.start
       @user = build_resource(params[:user])
       
       if resource.save
@@ -21,6 +28,11 @@ module Phoenix
       else
         clean_up_passwords(resource)
         render_with_scope(:new)
+      end
+      results = RubyProf.stop
+      
+      File.open "/Users/lanvige/repos/profile-register.html", 'a' do |file|
+        RubyProf::GraphHtmlPrinter.new(results).print(file)
       end
     end
 
