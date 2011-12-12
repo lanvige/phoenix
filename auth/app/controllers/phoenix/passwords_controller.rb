@@ -1,5 +1,5 @@
 module Phoenix
-  class PasswordsController < ::Devise::PasswordsController
+  class PasswordsController < Devise::PasswordsController
     def create
       super     
     end
