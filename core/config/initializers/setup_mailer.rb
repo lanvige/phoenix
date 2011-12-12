@@ -4,7 +4,7 @@ ActionMailer::Base.delivery_method = :smtp
 
 Mail.register_interceptor(Phoenix::Core::DevelopmentMailInterceptor) if Rails.env.development?  
 
-# This assumes you're running your local development server on port 3000 via script/server
+# This assumes you're running your local development server on port 3000 via $ rails server
 ActionMailer::Base.default_url_options = { :host => "localhost:3000" }
 
 ActionMailer::Base.smtp_settings = {

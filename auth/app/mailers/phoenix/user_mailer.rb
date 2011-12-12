@@ -1,28 +1,26 @@
 module Phoenix
   class UserMailer < Devise::Mailer
+    # No idea to use devise mailer or write in controller by self.
     layout "/phoenix/layouts/mailer"
     
     def confirmation_instructions(user)
       @title = "Welcome Using PHOENIX Engine..."
       @user_confirmation_url = "hahahahaa"
       
-      logger.info "==================confirmation_instructions====================="
-      mail(:to => user.email, :subject => @title, :from => "lanvige@gmail.com")
+      mail(:to => user.email, :subject => @title, :from => "zhuke.me@gmail.com")
     end
-    
-    def registration_confirmation(user)
-      @title = "Welcome Using PHOENIX Engine..."
-      @user_confirmation_url = "hahahahaa"
+
+    def welcome_instructions(user)
       
-      logger.info "===================registration_confirmation===================="
-      mail(:to => user.email, :subject => @title, :from => "lanvige@gmail.com")
     end
     
-    def password_reset(user, password)
-      @user = user
-      @password = password
+    def reset_password_instructions(user)
+      default_url_options[:host] = Spree::Config[:site_url]
+
+      @edit_password_reset_url = spree.edit_user_password_url(:reset_password_token => user.reset_password_token)
+
       mail(:to => user.email,
-           :subject => 'Password Reset Notification')
+           :subject => "zheke.me" + ' ' + I18n.t(:password_reset_instructions))
     end
   end
 end

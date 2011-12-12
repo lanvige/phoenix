@@ -31,8 +31,14 @@ module Phoenix
     # Setup accessible (or protected) attributes for user model
     attr_accessible :name, :email, :password, :avatar, :password_confirmation, :remember_me
 
+    # devise confirm! method overriden
+    # Send a welcome mail when user confirmed registe with mail.
+    def confirm!
+      super
+      welcome_instructions
+    end
 
-  private    
+  private
     def self.current
       Thread.current[:user]
     end
@@ -40,7 +46,11 @@ module Phoenix
     def self.current=(user)
       Thread.current[:user] = user
     end
-    
+
+    def welcome_instructions
+      UserMailer.welcome_instructions(self).deliver
+    end
+
     # Generate a friendly string randomically to be used as token.
     def self.friendly_token
       SecureRandom.base64(15).tr('+/=', '-_ ').strip.delete("\n")
