@@ -5,7 +5,7 @@ module Phoenix
       "hello world!"
       results = RubyProf.stop
       
-      File.open "/Users/lanvige/repos/profile-index.html", 'a' do |file|
+      File.open "/home/lanvige/repos/profile-index.html", 'a' do |file|
         RubyProf::GraphHtmlPrinter.new(results).print(file)
       end
     end

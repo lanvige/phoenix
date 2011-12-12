@@ -8,10 +8,8 @@ module Phoenix
     self.collection_name = 'users' 
     
     # Include default devise modules. Others available are:
-    # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-    devise :database_authenticatable, :registerable,
-           :recoverable, :rememberable, :trackable, :validatable,
-           :timeoutable, :confirmable,
+    devise :database_authenticatable, :token_authenticatable, :registerable, :recoverable,
+           :rememberable, :trackable, :validatable, :timeoutable, :confirmable,
            :encryptable, :encryptor => 'authlogic_sha512'
                   
     field :name
@@ -33,17 +31,8 @@ module Phoenix
     # Setup accessible (or protected) attributes for user model
     attr_accessible :name, :email, :password, :avatar, :password_confirmation, :remember_me
 
-    # devise confirm! method overriden
-    def confirm!
-      welcome_message
-      super
-    end
 
-  private
-    def welcome_message
-      UserMailer.registration_confirmation(self).deliver
-    end
-    
+  private    
     def self.current
       Thread.current[:user]
     end

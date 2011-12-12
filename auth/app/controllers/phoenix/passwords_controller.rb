@@ -1,9 +1,11 @@
 module Phoenix
   class PasswordsController < ::Devise::PasswordsController
-    def create      
+    def create
+      super     
     end
     
-    def edit      
+    def edit
+      super      
     end
   end
 end

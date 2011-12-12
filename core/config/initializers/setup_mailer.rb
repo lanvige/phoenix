@@ -1,3 +1,5 @@
+# Setup mail deliver server info
+
 ActionMailer::Base.delivery_method = :smtp
 
 Mail.register_interceptor(Phoenix::Core::DevelopmentMailInterceptor) if Rails.env.development?  
