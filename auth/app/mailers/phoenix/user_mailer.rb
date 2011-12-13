@@ -1,13 +1,14 @@
 module Phoenix
   class UserMailer < Phoenix::BaseMailer
-    include Devise::Mailers::Helpers
+    #include Devise::Mailers::Helpers
     
     layout "/phoenix/layouts/mailer"
     
     default :from => "phoenix@lanvige.com"
     
     def confirmation_instructions(user)
-      devise_mail(user, :confirmation_instructions)
+      logger.info "--Send confirmation mail--"
+      #devise_mail(user, :confirmation_instructions)
     end
     
     # UserMailer.welcome_instructions(@user).deliver
@@ -17,11 +18,11 @@ module Phoenix
     end
 
     def reset_password_instructions(user)
-      devise_mail(user, :reset_password_instructions)
+      #devise_mail(user, :reset_password_instructions)
     end
 
     def unlock_instructions(user)
-      devise_mail(user, :unlock_instructions)
+      #devise_mail(user, :unlock_instructions)
     end
       
     #def confirmation_instructions_bak(user)

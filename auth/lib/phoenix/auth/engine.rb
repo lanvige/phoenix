@@ -1,3 +1,5 @@
+require 'mongoid'
+
 module Phoenix
   module Auth
     class Engine < Rails::Engine
@@ -5,6 +7,9 @@ module Phoenix
       engine_name 'phoenix_auth'
 
       config.autoload_paths += %W(#{config.root}/lib)
+      
+      # Register Mongoid observers
+      config.mongoid.observers = :'phoenix/user_observer'
       
       def self.activate
         Dir.glob(File.join(File.dirname(__FILE__), "../../../app/**/*_decorator*.rb")) do |c|

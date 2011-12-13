@@ -9,7 +9,7 @@ module Phoenix
     
     # Include default devise modules. Others available are:
     devise :database_authenticatable, :token_authenticatable, :registerable, :recoverable,
-           :rememberable, :trackable, :validatable, :timeoutable, :confirmable,
+           :rememberable, :trackable, :validatable, :timeoutable,# :confirmable,
            :encryptable, :encryptor => 'authlogic_sha512'
                   
     field :name
