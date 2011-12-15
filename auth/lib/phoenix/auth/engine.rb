@@ -7,7 +7,9 @@ module Phoenix
       engine_name 'phoenix_auth'
 
       config.autoload_paths += %W(#{config.root}/lib)
-      
+      # Load the locals under sub-folder
+      config.i18n.load_path += Dir[File.join(config.root, 'config', 'locales', '**', '*.{rb,yml}').to_s]
+
       # Register Mongoid observers
       config.mongoid.observers = :'phoenix/user_observer'
       

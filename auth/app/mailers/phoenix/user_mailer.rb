@@ -1,14 +1,14 @@
 module Phoenix
-  class UserMailer < Phoenix::BaseMailer
-    #include Devise::Mailers::Helpers
-    
+  class UserMailer < Phoenix::BaseMailer    
     layout "/phoenix/layouts/mailer"
     
-    default :from => "phoenix@lanvige.com"
+    default :from => "Phoenix Engine <phoenix@lanvige.com>"
     
     def confirmation_instructions(user)
-      logger.info "--Send confirmation mail--"
-      #devise_mail(user, :confirmation_instructions)
+      @user = user
+
+      mail(:to => "#{user.name} <#{user.email}>",
+           :subject => I18n.t('devise.mailer.confirmation_instructions.subject'))
     end
     
     # UserMailer.welcome_instructions(@user).deliver
@@ -24,12 +24,6 @@ module Phoenix
     def unlock_instructions(user)
       #devise_mail(user, :unlock_instructions)
     end
-      
-    #def confirmation_instructions_bak(user)
-    #  @user = user
-    #  #@user_confirmation_url = "hahahahaa"
-    #  mail(:to => "#{user.name} <#{user.email}>", :subject => "Confirm your account...")
-    #end
     
     def reset_password_instructions_bak(user)
       @user = user
