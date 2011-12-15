@@ -1,5 +1,5 @@
 module Phoenix
-  class ConfirmationsController < Devise::PasswordsController
+  class ConfirmationsController < Devise::ConfirmationsController
     
     def new
       super
@@ -7,6 +7,10 @@ module Phoenix
     
     def create
       super     
+    end
+    
+    def show
+      super
     end
   end
 end
