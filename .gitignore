@@ -58,6 +58,9 @@ pkg/
 /nbproject/
 /.idea/
 
+# Aptana project
+.project
+
 # Textmate project files
 /*.tmproj
 
