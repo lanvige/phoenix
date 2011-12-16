@@ -20,8 +20,4 @@
   %p
     = f.submit "Sign in"
 
-= link_to t(:create_a_new_account), signup_path
-%br
-= link_to "Forgot your password?", new_user_password_path
-%br
-= link_to "Didn't receive confirmation instructions?", new_user_confirmation_path
+= render :partial => "devise/shared/links"
