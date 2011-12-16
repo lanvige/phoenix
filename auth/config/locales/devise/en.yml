@@ -43,6 +43,8 @@ en:
     mailer:
       confirmation_instructions:
         subject: 'Please verify your email address'
+      welcome_instructions:
+        subject: 'Welcome using Phoenix Engine'
       reset_password_instructions:
         subject: 'Reset password instructions'
       unlock_instructions:
