@@ -1,12 +1,12 @@
 # encoding: UTF-8
-version = File.read(File.expand_path("../../PHOENIX_VERSION", __FILE__)).strip
+version = File.read(File.expand_path('../../PHOENIX_VERSION', __FILE__)).strip
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.9.2'
     
-  s.name        = "phoenix_core"
+  s.name        = 'phoenix_core'
   s.version     = version
   s.summary     = 'Core Engine.'
   s.description = 'Its used for build core structure, dont contain biz.'
@@ -15,13 +15,21 @@ Gem::Specification.new do |s|
   s.email        = 'lanvige@gmail.com'
   s.homepage     = 'http://lanvige.com'
 
-  s.files = Dir["{app,config,lib}/**/*"] + ["README.md"]
+  s.files = Dir['{app,config,lib}/**/*'] + ['README.md']
   s.require_path = 'lib'
+  s.requirements << 'none'
   
-  s.add_dependency "rails", "~> 3.1.3"
-  s.add_dependency "jquery-rails"
+  s.add_dependency 'rails', '~> 3.1.3'
+  s.add_dependency 'jquery-rails'
   s.add_dependency 'haml'
-  s.add_dependency 'simple_form'
+  s.add_dependency 'mongoid'
+  s.add_dependency 'mongoid_slug'
 
-  s.add_development_dependency "haml-rails"
+  s.add_dependency 'state_machine'
+  s.add_dependency 'simple_form'
+  s.add_dependency 'stringex'
+  s.add_dependency 'faker'
+  s.add_dependency 'deface'
+
+  s.add_development_dependency 'haml-rails'
 end
