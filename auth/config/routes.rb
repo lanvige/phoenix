@@ -15,7 +15,9 @@ Phoenix::Core::Engine.routes.draw do
   end
 
   resources :users, :only => [:index, :show, :edit, :update] do
-    match 'profile' => 'profile', :as => :profile
+    collection do
+    #member do
+      get 'profile'
+    end
   end
-
 end
