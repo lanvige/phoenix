@@ -3,7 +3,7 @@ Phoenix::Core::Engine.routes.draw do
              :class_name => 'Phoenix::User',
              :controllers => { :registrations => "phoenix/registrations",
                                :confirmations => "phoenix/confirmations",
-                               :password      => "phoenix/passwords",
+                               :passwords     => "phoenix/passwords",
                                :sessions      => 'phoenix/sessions'}
 
   devise_scope :user do
@@ -14,6 +14,8 @@ Phoenix::Core::Engine.routes.draw do
     #get "confirmation" => "confirmations#new", :as => :confirmation
   end
 
-  resources :users, :only => [:index, :show, :edit, :update]
+  resources :users, :only => [:index, :show, :edit, :update] do
+    match 'profile' => 'profile', :as => :profile
+  end
 
 end

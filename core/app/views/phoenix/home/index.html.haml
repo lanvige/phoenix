@@ -2,12 +2,12 @@
   hello world
   
 - if current_user
-  = current_user.name.to_s
+  = link_to current_user.name.to_s, user_path(current_user)
 
 %br
 
-= link_to 'Log In', phoenix.login_path
+= link_to 'Log In', login_path
 %br
-= link_to 'Sign UP', phoenix.signup_path
+= link_to 'Sign UP', signup_path
 %br
-= link_to 'logout', phoenix.logout_path
+= link_to 'logout', logout_path

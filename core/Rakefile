@@ -8,6 +8,11 @@ require 'rubygems/package_task'
 
 spec = eval(File.read('phoenix_core.gemspec'))
 
+task :routes => 'app:environment' do
+  Rails.application.reload_routes!
+  all_routes = Phoenix::Core::Engine.routes.routes
+end
+
 Gem::PackageTask.new(spec) do |p|
   p.gem_spec = spec
 end
