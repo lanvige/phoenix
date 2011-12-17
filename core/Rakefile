@@ -7,6 +7,8 @@ require 'rake/packagetask'
 require 'rubygems/package_task'
 require 'phoenix/core/testing_support/common_rake'
 
+RSpec::Core::RakeTask.new
+
 spec = eval(File.read('phoenix_core.gemspec'))
 
 task :routes => 'app:environment' do

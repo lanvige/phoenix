@@ -60,3 +60,15 @@ task :clean do
     end
   end
 end
+
+
+desc "Creates a sandbox application for simulating the Spree code in a deployed Rails app"
+task :sandbox do
+  require 'phoenix_core'
+
+  Spree::SandboxGenerator.start ["--lib_name=spree", "--database=#{ENV['DB_NAME']}"]
+  Spree::InstallGenerator.start ["--auto-accept", "--skip-install-data"]
+
+  cmd = "bundle exec rake db:bootstrap AUTO_ACCEPT=true"; puts cmd; system cmd
+  cmd = "bundle exec rake assets:precompile:nondigest"; puts cmd; system cmd
+end
