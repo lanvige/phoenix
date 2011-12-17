@@ -4,52 +4,90 @@
 ***
 <table style="border:1px solid; width:100%">
 	<tr>
-		<td>
-			URI
-		</td>
-		<td>
-			Controller/Action
-		</td>
-		<td>
-			TYPE
-		</td>
-		<td>
-			COMMENT
-		</td>
+		<td><strong>URI</strong></td>
+		<td><strong>Controller/Action</strong></td>
+		<td><strong>HTTP TYPE</strong></td>
+		<td><strong>COMMENTS</strong></td>
 	</tr>
 	<tr>
-		<td>
-			/login || /users/sign_in
-		</td>
-		<td>
-			sessons/new
-		</td>
-		<td>
-			GET
-		</td>
-		<td>
-			登陆页面
-		</td>
+		<td>/signup <br /> /users/sign_up</td>
+		<td>registerations/new</td>
+		<td>GET</td>
+		<td>Show the register page</td>
+	</tr>
+	<tr>
+		<td>/registerations/create</td>
+		<td>registerations/create</td>
+		<td>POST</td>
+		<td>Register with post data</td>
+	</tr>
+	<tr>
+		<td>/login <br /> /users/sign_in</td>
+		<td>sessons/new</td>
+		<td>GET</td>
+		<td>Login page</td>
+	</tr>
+	<tr>
+		<td>/sessions/create</td>
+		<td>sessions/create</td>
+		<td>POST</td>
+		<td>Post user auth info to make login</td>
+	</tr>
+	<tr>
+		<td>/logout <br /> /users/sign_out</td>
+		<td>sessons/destory</td>
+		<td>GET</td>
+		<td>Logout</td>
+	</tr>
+	<tr>
+		<td>/users/lanvige/profile</td>
+		<td>profile/index</td>
+		<td>GET</td>
+		<td>Show the user's profile</td>
+	</tr>
+	<tr>
+		<td>/users/lanvige/profile/edit</td>
+		<td>profile/edit</td>
+		<td>GET</td>
+		<td>Profile edit page</td>
+	</tr>
+	<tr>
+		<td>/users/lanvige/profile/update</td>
+		<td>profile/update</td>
+		<td>POST</td>
+		<td>Update action of profile</td>
+	</tr>
+	<tr>
+		<td>/users/password/new</td>
+		<td>passwords/new</td>
+		<td>GET</td>
+		<td>Show forgot password page</td>
+	</tr>
+	<tr>
+		<td>/users/password/edit?reset_password_token=</td>
+		<td>passwords/update</td>
+		<td>POST</td>
+		<td>Update action of profile</td>
+	</tr>
+	<tr>
+		<td>/users/confirmation/new</td>
+		<td>confirmations/new</td>
+		<td>GET</td>
+		<td>Show the re-send mail page</td>
+	</tr>
+	<tr>
+		<td>/users/confirmation/update</td>
+		<td>confirmations/update</td>
+		<td>POST</td>
+		<td>Resend the activity mail</td>
+	</tr>
+		<tr>
+		<td>/users/confirmation</td>
+		<td>confirmations/show</td>
+		<td>GET</td>
+		<td>Show this page if user is already activitied!</td>
 	</tr>
 </table>
-
-   ||  ||    ||  get  || 
-/sessions/create || post  || 登陆  
-/signup  || /users/sign_up  || /registers/new || get || 显示注册页面  
-/registers/create  ||  post  ||  注册  
-/logout   ||  /users/sign_out || post || 注消  
-
-/users/lanvige  ||  get  ||  显示用户social 状态页面  
-
-/users/lanvige/profile || get || 显示用户信息  
-/users/lanvige/profile/edit  ||  get || 显示用户profile的编辑页面  
-/users/lanvige/profile/update || post || 提交更新  
-/users/password/new  ||  get || 显示获取新密码  
-/users/password/edit?reset_password_token=ydnTL9VBv6f81whJUKoY  
-/users/password/update  ||  post  ||  更新用户密码  
-/users/confirmation/new  || get  || 显示重发邮件页面  
-/users/confirmation/create  || post  || 提交表单  
-/users/confirmation  ||  get  ||  show 方法  || 如果邮箱已验证，出该页面提示。  
 
 
 实现单实例的url最佳方式是？
@@ -59,3 +97,4 @@ resource/update
 
 ## social
 
+/users/lanvige  ||  get  ||  显示用户social 状态页面  
