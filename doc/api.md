@@ -1,15 +1,28 @@
 # Phoenix Engine API
-------
 
 ## Authentication
 ***
 <table style="border:1px solid; width:100%">
 	<tr>
 		<td>
-			/login
+			URI
 		</td>
 		<td>
-			/users/sign_in || sessons/new
+			Controller/Action
+		</td>
+		<td>
+			TYPE
+		</td>
+		<td>
+			COMMENT
+		</td>
+	</tr>
+	<tr>
+		<td>
+			/login || /users/sign_in
+		</td>
+		<td>
+			sessons/new
 		</td>
 		<td>
 			GET
