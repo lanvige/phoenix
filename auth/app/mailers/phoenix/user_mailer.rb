@@ -14,7 +14,7 @@ module Phoenix
     def welcome_instructions(user)
       @user = user
       mail(:to => "#{user.name} <#{user.email}>", 
-           :subject => I18n.t("Welcome to use Phoenix Engine"))
+           :subject => I18n.t('devise.mailer.welcome_instructions.subject'))
     end
 
     def reset_password_instructions(user)
