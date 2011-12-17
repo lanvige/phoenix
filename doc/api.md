@@ -56,7 +56,77 @@
 			GET
 		</td>
 		<td>
-			登陆页面
+			Login page
+		</td>
+	</tr>
+	<tr>
+		<td>
+			/sessions/create
+		</td>
+		<td>
+			sessions/create
+		</td>
+		<td>
+			POST
+		</td>
+		<td>
+			Post user auth info to make login
+		</td>
+	</tr>
+	<tr>
+		<td>
+			/logout <br /> /users/sign_out
+		</td>
+		<td>
+			sessons/destory
+		</td>
+		<td>
+			GET
+		</td>
+		<td>
+			Logout
+		</td>
+	</tr>
+	<tr>
+		<td>
+			/users/lanvige/profile
+		</td>
+		<td>
+			profile/index
+		</td>
+		<td>
+			GET
+		</td>
+		<td>
+			Show the user's profile
+		</td>
+	</tr>
+	<tr>
+		<td>
+			/users/lanvige/profile/edit
+		</td>
+		<td>
+			profile/edit
+		</td>
+		<td>
+			GET
+		</td>
+		<td>
+			Profile edit page
+		</td>
+	</tr>
+	<tr>
+		<td>
+			/users/lanvige/profile/update
+		</td>
+		<td>
+			profile/update
+		</td>
+		<td>
+			POST
+		</td>
+		<td>
+			Update action of profile
 		</td>
 	</tr>
 </table>
@@ -67,7 +137,7 @@
 /registers/create  ||  post  ||  注册  
 /logout   ||  /users/sign_out || post || 注消  
 
-/users/lanvige  ||  get  ||  显示用户social 状态页面  
+
 
 /users/lanvige/profile || get || 显示用户信息  
 /users/lanvige/profile/edit  ||  get || 显示用户profile的编辑页面  
@@ -87,3 +157,4 @@ resource/update
 
 ## social
 
+/users/lanvige  ||  get  ||  显示用户social 状态页面  
