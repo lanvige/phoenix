@@ -19,6 +19,34 @@
 	</tr>
 	<tr>
 		<td>
+			/signup <br /> /users/sign_up
+		</td>
+		<td>
+			registerations/new
+		</td>
+		<td>
+			GET
+		</td>
+		<td>
+			Show the register page
+		</td>
+	</tr>
+	<tr>
+		<td>
+			/registerations/create
+		</td>
+		<td>
+			registerations/create
+		</td>
+		<td>
+			POST
+		</td>
+		<td>
+			Register with post data
+		</td>
+	</tr>
+	<tr>
+		<td>
 			/login <br /> /users/sign_in
 		</td>
 		<td>
