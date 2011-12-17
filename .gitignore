@@ -29,10 +29,6 @@ pkg/
 /coverage/
 /db/*.javadb/
 /db/*.sqlite3-journal
-/doc/api/
-/doc/app/
-/doc/features.html
-/doc/specs.html
 /public/cache
 /public/stylesheets/compiled
 /public/system
@@ -62,6 +58,10 @@ pkg/
 
 # Textmate project files
 /*.tmproj
+
+# Sublime text project
+/*.sublime-project
+/*.sublime-workspace
 
 # vim artifacts
 **.swp
