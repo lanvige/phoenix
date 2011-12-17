@@ -5,16 +5,16 @@
 <table style="border:1px solid; width:100%">
 	<tr>
 		<td>
-			*URI*
+			<strong>URI</strong>
 		</td>
 		<td>
-			*Controller/Action*
+			<strong>Controller/Action</strong>
 		</td>
 		<td>
-			*HTTP TYPE*
+			<strong>HTTP TYPE</strong>
 		</td>
 		<td>
-			*COMMENTS*
+			<strong>COMMENTS</strong>
 		</td>
 	</tr>
 	<tr>
