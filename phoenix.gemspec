@@ -21,13 +21,14 @@ Gem::Specification.new do |s|
   s.bindir         = 'lib/phoenix/bin'
   s.executables    = %w(phoenix)
     
-  s.add_dependency 'phoenix_core',     version
-  s.add_dependency 'phoenix_auth',     version
-  s.add_dependency 'phoenix_social',   version
+  s.add_dependency('phoenix_core',    version)
+  s.add_dependency('phoenix_auth',    version)
+  s.add_dependency('phoenix_social',  version)
 
-  s.add_dependency 'rails',            '~> 3.1.3'
-  s.add_dependency 'jquery-rails'
-  s.add_dependency 'haml'
+  s.add_dependency('bundler',        '~> 1.0')
+  s.add_dependency('rails',          '~> 3.1.3')
+  s.add_dependency('jquery-rails')
+  s.add_dependency('haml')
 
   s.add_development_dependency "haml-rails"
 end
