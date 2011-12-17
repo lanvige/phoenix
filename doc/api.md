@@ -19,7 +19,7 @@
 	</tr>
 	<tr>
 		<td>
-			/login || /users/sign_in
+			/login <br /> /users/sign_in
 		</td>
 		<td>
 			sessons/new
