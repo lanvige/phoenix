@@ -5,6 +5,7 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/packagetask'
 require 'rubygems/package_task'
+require 'phoenix/core/testing_support/common_rake'
 
 spec = eval(File.read('phoenix_core.gemspec'))
 
@@ -15,4 +16,10 @@ end
 
 Gem::PackageTask.new(spec) do |p|
   p.gem_spec = spec
+end
+
+desc "Generates a dummy app for testing"
+task :test_app do
+  ENV['LIB_NAME'] = 'phoenix_core'
+  Rake::Task['common:test_app'].invoke
 end
