@@ -3,6 +3,6 @@ version = File.read(File.expand_path("../../../PHOENIX_VERSION", __FILE__)).stri
 module Phoenix
   def self.version
     # Why can't use version from file
-    "0.1.0.beta"
+    "0.2.0.beta"
   end
 end
