@@ -1,3 +1,4 @@
+$:.push File.expand_path("../lib", __FILE__)
 #!/usr/bin/env rake
 
 require 'rubygems'
@@ -5,11 +6,14 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/packagetask'
 require 'rubygems/package_task'
+require 'rspec/core/rake_task'
 require 'phoenix/core/testing_support/common_rake'
 
 RSpec::Core::RakeTask.new
 
 spec = eval(File.read('phoenix_core.gemspec'))
+
+task :default => :spec
 
 task :routes => 'app:environment' do
   Rails.application.reload_routes!

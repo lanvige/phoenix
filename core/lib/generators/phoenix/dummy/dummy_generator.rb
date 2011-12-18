@@ -36,9 +36,8 @@ module Phoenix
 
     def test_dummy_config
       @lib_name = options[:lib_name]
-      @database = options[:database]
-
-      template "rails/database.yml", "#{dummy_path}/config/database.yml", :force => true
+      #@database = options[:database]
+      
       template "rails/boot.rb", "#{dummy_path}/config/boot.rb", :force => true
       template "rails/application.rb", "#{dummy_path}/config/application.rb", :force => true
       template "rails/routes.rb", "#{dummy_path}/config/routes.rb", :force => true
