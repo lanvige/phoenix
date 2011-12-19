@@ -19,7 +19,7 @@ module Phoenix
     end
 
     PASSTHROUGH_OPTIONS = [
-      :skip_active_record, :skip_javascript, :database, :javascript, :quiet, :pretend, :force, :skip
+      :skip_active_record, :skip_javascript, :javascript, :quiet, :pretend, :force, :skip
     ]
 
     def generate_test_dummy
@@ -63,7 +63,6 @@ module Phoenix
     end
 
     attr :lib_name
-    attr :database
 
     protected
     def dummy_path

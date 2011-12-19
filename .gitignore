@@ -38,10 +38,14 @@ pkg/
 /capybara-*.html
 /gems
 /rerun.txt
+
 /spec/requests
 /spec/routing
 /spec/views
 /specifications
+
+# Dummy for Rails RSpec
+dummy/
 
 # scm revert files
 **.orig
