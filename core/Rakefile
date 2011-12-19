@@ -11,17 +11,17 @@ require 'phoenix/core/testing_support/common_rake'
 
 RSpec::Core::RakeTask.new
 
-spec = eval(File.read('phoenix_core.gemspec'))
-
+# bundle exec rake
 task :default => :spec
+
+spec = eval(File.read('phoenix_core.gemspec'))
+Gem::PackageTask.new(spec) do |p|
+  p.gem_spec = spec
+end
 
 task :routes => 'app:environment' do
   Rails.application.reload_routes!
-  all_routes = Phoenix::Core::Engine.routes.routes
-end
-
-Gem::PackageTask.new(spec) do |p|
-  p.gem_spec = spec
+  all_routes = Phoenix::Core::Engine.routes
 end
 
 desc "Generates a dummy app for testing"

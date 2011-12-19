@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount <%= lib_name.classify %>::Engine => "/"
+  <%= 'mount Phoenix::Core::Engine => "/"' if defined?(Phoenix::Core) %>
 end
