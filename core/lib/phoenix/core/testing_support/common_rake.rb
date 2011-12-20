@@ -1,6 +1,6 @@
 unless defined?(Phonenix::InstallGenerator)
   # why i can't find the path under root?
-  require 'generators/phoenix/install/install_generator'
+  # require 'generators/phoenix/install/install_generator'
 end
 
 desc "Generates a dummy app for testing"
