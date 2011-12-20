@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.2'
   s.required_rubygems_version = ">= 1.3.6"
   
-  s.name        = "phoenix_settings"
+  s.name        = "phoenix_dash"
   s.version     = version
-  s.summary     = 'Global setting for Phoenix Engine.'
-  s.description = 'Global setting for Phoenix Engine.'
+  s.summary     = 'User dashboard for Phoenix Engine.'
+  s.description = 'User dashboard for Phoenix Engine.'
   
   s.author      = 'Lanvige Jiang'
   s.email       = 'lanvige@gmail.com'
