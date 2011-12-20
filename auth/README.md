@@ -1,3 +1,2 @@
-= PhoenixAuth
-
-This project rocks and uses MIT-LICENSE.
+Authentication:
+manages users and sessions
