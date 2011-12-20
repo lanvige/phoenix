@@ -20,12 +20,14 @@ gem "haml"
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'generator_spec'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'rcov'
   gem 'faker'
+  
+  gem 'generator_spec'
+  gem 'database_cleaner', :git => 'git://github.com/bmabey/database_cleaner.git'
 end
 
 # Databse

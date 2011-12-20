@@ -1,6 +1,6 @@
 require 'active_support/concern'
 
-module Refinery
+module Phoenix
   module Engine
     extend ActiveSupport::Concern
 
@@ -9,12 +9,12 @@ module Refinery
         @@after_inclusion_procs ||= []
       end
 
-      # Specify a block of code to be run after the refinery inclusion step. See
-      # Refinery::Core::Engine#refinery_inclusion for details regarding the Refinery
+      # Specify a block of code to be run after the phoenix inclusion step. See
+      # Phoenix::Core::Engine#phoenix_inclusion for details regarding the Phoenix
       # inclusion process.
       #
       # Example:
-      #   module Refinery
+      #   module Phoenix
       #     module Images
       #       class Engine < Rails::Engine
       #         engine_name :images
@@ -37,12 +37,12 @@ module Refinery
         @@before_inclusion_procs ||= []
       end
 
-      # Specify a block of code to be run before the refinery inclusion step. See
-      # Refinery::Core::Engine#refinery_inclusion for details regarding the Refinery
+      # Specify a block of code to be run before the phoenix inclusion step. See
+      # Phoenix::Core::Engine#Phoenix_inclusion for details regarding the phoenix
       # inclusion process.
       #
       # Example:
-      #   module Refinery
+      #   module Phoenix
       #     module Images
       #       class Engine < Rails::Engine
       #         engine_name :images
