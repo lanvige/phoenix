@@ -1,5 +1,8 @@
-# encoding: UTF-8
-version = File.read(File.expand_path("../../PHOENIX_VERSION", __FILE__)).strip
+# Encoding: UTF-8
+$:.push File.expand_path('../../core/lib', __FILE__)
+require 'phoenix/version'
+
+version = Phoenix::Version.to_s
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
@@ -18,6 +21,6 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,lib}/**/*"] + ["README.md"]
   s.require_path = 'lib'
 
-  s.add_dependency('phoenix_core',   version)
-  s.add_dependency('phoenix_auth',  version)
+  s.add_dependency 'phoenix_core',   version
+  s.add_dependency 'phoenix_auth',   version
 end
