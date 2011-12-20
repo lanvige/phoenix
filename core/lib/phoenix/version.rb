@@ -3,7 +3,7 @@ module Phoenix
     @major = 0
     @minor = 2
     @tiny  = 0
-    @build = beta
+    @build = 'beta'
 
     class << self
       attr_reader :major, :minor, :tiny, :build

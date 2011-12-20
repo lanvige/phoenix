@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.bindir         = 'bin'
   s.executables    = %w(phoenix)
     
-  s.add_dependency 'bundler',          '~> 1.0'
+  s.add_dependency 'bundler'
   s.add_dependency 'phoenix_core',     version
   s.add_dependency 'phoenix_auth',     version
   s.add_dependency 'phoenix_social',   version

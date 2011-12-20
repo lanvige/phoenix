@@ -38,7 +38,6 @@ gem "mongoid_slug", :require => 'mongoid/slug'
 
 group :cucumber do
   gem 'cucumber-rails'
-  gem 'database_cleaner'
   gem 'nokogiri'
   gem 'capybara'
   gem 'factory_girl'
