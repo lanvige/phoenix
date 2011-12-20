@@ -5,73 +5,19 @@ rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
 
-spec = eval(File.read('phoenix.gemspec'))
-Gem::PackageTask.new(spec) do |pkg|
-  pkg.gem_spec = spec
+APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
+
+if File.exists?(APP_RAKEFILE)
+  load 'rails/tasks/engine.rake'
 end
 
-namespace :gem do
-  desc "run rake gem for all gems"
-  task :build do
-    %w(core auth social).each do |gem_name|
-      puts "--------------Rebuild PHOENIX #{gem_name} GEM---------------------"
-      puts "Deleting #{gem_name}/pkg"
-      FileUtils.rm_rf("#{gem_name}/pkg")
-      cmd = "cd #{gem_name} && bundle exec rake gem"; puts cmd; system cmd
-    end
-    
-    puts "Deleting pkg directory"
-    FileUtils.rm_rf("pkg")
-    cmd = "bundle exec rake gem"; puts cmd; system cmd
-  end
-
-  desc "run gem install for all gems"
-  task :install do
-    version = File.read(File.expand_path("../PHOENIX_VERSION", __FILE__)).strip
-
-    %w(core auth social).each do |gem_name|
-      puts "----------Rebuild PHOENIX #{gem_name} and install the GEM-----------"
-      puts "Deleting #{gem_name}/pkg"
-      FileUtils.rm_rf("#{gem_name}/pkg")
-      cmd = "cd #{gem_name} && bundle exec rake gem"; puts cmd; system cmd
-      cmd = "cd #{gem_name}/pkg && gem install phoenix_#{gem_name}-#{version}.gem"; puts cmd; system cmd
-    end
-    
-    puts "----------------Rebuild PHOENIX and install the GEM------------------"
-    FileUtils.rm_rf("./pkg")
-    cmd = "bundle exec rake gem"; puts cmd; system cmd
-    cmd = "gem install pkg/phoenix-#{version}.gem"; puts cmd; system cmd
-  end
+Dir[File.expand_path('../tasks/**/*', __FILE__)].each do |task|
+  load task
 end
 
-desc "clean the whole repository by removing all the generated files"
-task :clean do
-  puts "Deleting sandbox..."
-  FileUtils.rm_rf("sandbox")
-  puts "Deleting pkg directory.."
-  FileUtils.rm_rf("pkg")
+require "phoenix_testing"
+Phoenix::Testing::Railtie.load_tasks
+Phoenix::Testing::Railtie.load_dummy_tasks(File.dirname(__FILE__))
 
-  %w(core auth social).each do |gem_name|
-    puts "Cleaning #{gem_name}:"
-    puts "  Deleting #{gem_name}/Gemfile"
-    FileUtils.rm_f("#{gem_name}/Gemfile")
-    puts "  Deleting #{gem_name}/pkg"
-    FileUtils.rm_rf("#{gem_name}/pkg")
-    puts "  Deleting #{gem_name}'s dummy application"
-    Dir.chdir("#{gem_name}/spec") do
-      FileUtils.rm_rf("dummy")
-    end
-  end
-end
-
-
-desc "Creates a sandbox application for simulating the Spree code in a deployed Rails app"
-task :sandbox do
-  require 'phoenix_core'
-
-  Spree::SandboxGenerator.start ["--lib_name=spree", "--database=#{ENV['DB_NAME']}"]
-  Spree::InstallGenerator.start ["--auto-accept", "--skip-install-data"]
-
-  cmd = "bundle exec rake db:bootstrap AUTO_ACCEPT=true"; puts cmd; system cmd
-  cmd = "bundle exec rake assets:precompile:nondigest"; puts cmd; system cmd
-end
+desc "Build gem files for all projects"
+task :build => "all:build"
