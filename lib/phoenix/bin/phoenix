@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'phoenix/cli'
-require 'active_support/core_ext'
-
-Phoenix::CLI.start
