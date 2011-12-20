@@ -1,63 +1,77 @@
 #--------------------------------------------------------------
 # Ignore these files when commiting to a git repository
-#
 #--------------------------------------------------------------
 
-# bundler state
-/.bundle
-/vendor/bundle/
-
-# minimal Rails specific artifacts
-db/*.sqlite3
-/log/*
-tmp/*
-
-# ignore build files
-*.gem
-gempkg/
-pkg/
-
-# various artifacts
-**.war
-*.rbc
-*.sassc
-.redcar/
-.sass-cache
-/config/config.yml
-/config/database.yml
-/coverage.data
-/coverage/
-/db/*.javadb/
-/db/*.sqlite3-journal
-/public/cache
-/public/stylesheets/compiled
-/public/system
-/spec/tmp/*
-/cache
-/capybara*
-/capybara-*.html
-/gems
-/rerun.txt
-
-/spec/requests
-/spec/routing
-/spec/views
-/specifications
-
-# Dummy for Rails RSpec
-*/spec/dummy/
-
-# scm revert files
-**.orig
+# ------------ System ------------
+# Windows
+Thumbs.db
 
 # Mac finder artifacts
 .DS_Store
 
+# ------------ Rails ------------
+# Bundler state
+/.bundle
+/vendor/bundle/
+
+# Gemfile's lock file
+Gemfile.lock
+
+# Acts as Indexed
+index/**/*
+
+# Minimal Rails specific artifacts
+db/*.sqlite3
+/log/*
+tmp/*
+/db/*.javadb/
+/db/*.sqlite3-journal
+/public/cache
+/cache
+
+# Ignore build files
+*.gem
+gempkg/
+pkg/
+
+# SASS
+.sass-cache
+.sass-cache/*
+
+# Sprockets
+public/assets
+public/stylesheets/compiled
+
+# Privacy data
+/config/config.yml
+/config/database.yml
+
+# Vendor Cache
+vendor/cache
+
+# ------------ Test ------------
+# Dummy for Rails RSpec
+*/spec/dummy/
+/spec/tmp/*
+
+# Capybara Bug
+/capybara*
+/capybara-*.html
+
+/coverage.data
+/coverage/
+
+# scm revert files
+**.orig
+
+# ------------ IDE ------------
 # Netbeans project directory
 /nbproject/
-/.idea/
 
-# Aptana project
+# RubyMine
+.idea
+
+# Aptana & Eclipse project
 .project
 
 # Textmate project files
@@ -67,5 +81,9 @@ pkg/
 /*.sublime-project
 /*.sublime-workspace
 
-# vim artifacts
-**.swp
+# VIM artifacts
+*.swp
+*.swo
+
+# Backup
+*~

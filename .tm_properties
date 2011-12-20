@@ -1,0 +1,2 @@
+excludeDirectories = "{ci,$CWD/config,pkg}"
+exclude            = "$CWD/Gemfile.lock"

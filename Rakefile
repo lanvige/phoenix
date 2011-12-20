@@ -1,6 +1,9 @@
 #!/usr/bin/env rake
-require 'rake'
-require 'rubygems/package_task'
+begin
+  require 'bundler/setup'
+rescue LoadError
+  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
+end
 
 spec = eval(File.read('phoenix.gemspec'))
 Gem::PackageTask.new(spec) do |pkg|
