@@ -45,7 +45,7 @@ pkg/
 /specifications
 
 # Dummy for Rails RSpec
-dummy/
+*/spec/dummy/
 
 # scm revert files
 **.orig
