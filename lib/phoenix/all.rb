@@ -1,3 +1,3 @@
-%w(core auth social).each do |engine|
+%w(core auth social testing).each do |engine|
   require "phoenix_#{engine}"
 end
