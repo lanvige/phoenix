@@ -1,0 +1,8 @@
+<div id="user-profile">
+	<h3>User Profile</h3>
+	<% if current_user %>
+	<%= @user.name%>
+	<br />
+	<%= @user.email%>
+	<% end %>
+</div>
