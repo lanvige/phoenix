@@ -1,1 +1,24 @@
 /* global.css */
+body {
+	background:#fff url(/assets/noise.png);
+}
+header {
+	background: #333;
+	height: 60px;
+}
+#body {
+	width: 980px;
+	margin: 0 auto;
+}
+footer {
+	border-top: 1px solid #ccc;
+	margin: 0 auto;
+}
+
+
+#signup-form {
+	
+}
+#signin-form {
+	padding: 30px 0;
+}

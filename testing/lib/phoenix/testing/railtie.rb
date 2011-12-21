@@ -25,8 +25,8 @@ module Phoenix
       end
 
       config.after_initialize do
-        Phoenix.register_engine(Phoenix::Testing)
-        Testing.load_factories
+        #Phoenix.register_engine(Phoenix::Testing)
+        #Testing.load_factories
       end
     end
   end

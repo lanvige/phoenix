@@ -1,0 +1,41 @@
+<div id="signin-form">
+	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	<fieldset>
+		<legend>
+			Sign In
+		</legend>
+		<div class="clearfix">
+			<label><%= f.label :email %></label>
+			<div class="input">
+				<%= f.email_field :email %>
+			</div>
+		</div>
+		<div class="clearfix">
+			<label><%= f.label :password %></label>
+			<div class="input">
+				<%= f.password_field :password %>
+			</div>
+		</div>
+		<% if devise_mapping.rememberable? %>
+		<div class="clearfix">
+			<label></label>
+			<ul class="inputs-list">
+				<li>
+					<label> <%= f.check_box :remember_me %> <span><%= f.label :remember_me %></span> </label>
+				</li>
+			</ul>
+		</div>
+		<% end %>
+		<div class="clearfix">
+			<%= f.submit "Sign in" %>
+		</div>
+		<% end %>
+		<div class="clearfix">
+			<%= link_to t(:create_a_new_account), signup_path %>
+			<br />
+			<%= link_to "Forgot your password?", new_user_password_path %>
+			<br />
+			<%= link_to "Didn't receive confirmation instructions?", new_user_confirmation_path %>
+		</div>
+	</fieldset>
+</div>
