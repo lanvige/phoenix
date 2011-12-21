@@ -1,1 +1,14 @@
 /* global.css */
+body {
+	background:#fff url(/assets/noise.png);
+}
+#header {
+	background: #333;
+	height: 80px;
+}
+#body {
+	
+}
+#footer {
+	border-top: 1px solid #ccc;
+}
