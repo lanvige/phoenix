@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.files          = Dir["{lib}/**/*"] + ["README.md"]
   s.require_path   = 'lib'
   s.requirements   << 'none'
-  s.bindir         = 'bin'
+  s.bindir         = 'lib/phoenix/bin'
   s.executables    = %w(phoenix)
     
   s.add_dependency 'bundler'

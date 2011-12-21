@@ -3,7 +3,7 @@ require 'pathname'
 require 'rails/generators/named_base'
 
 module Phoenix
-  class EngineGenerator < Rails::Generators::NamedBase
+  class ExtensionGenerator < Rails::Generators::NamedBase
     source_root Pathname.new(File.expand_path('../templates', __FILE__))
     argument :attributes, :type => :array, :default => [], :banner => "field:type field:type"
 
