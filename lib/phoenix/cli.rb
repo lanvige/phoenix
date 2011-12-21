@@ -6,7 +6,7 @@ require 'phoenix/extension'
 module Phoenix
   class CLI < Thor
     def self.basename
-      "spree"
+      "phoenix"
     end
 
     map "-v"        => "version"
@@ -14,12 +14,12 @@ module Phoenix
 
     desc "version", "print the current version"
     def version
-      shell.say "Phoenix Engine #{Phoenix.version}", :green
+      shell.say "Phoenix Engine #{Phoenix::Version}", :green
     end
 
     desc "app NAME", "create a new application with the given name"
     method_option "name", :type => :string
-    def extension(name)
+    def app(name)
       invoke "phoenix:app:generate", [options[:name] || name]
     end
 

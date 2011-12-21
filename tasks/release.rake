@@ -1,4 +1,4 @@
-ENGINES = %w{ settings core auth dash }
+ENGINES = %w{ settings core auth social testing }
 
 require File.expand_path('../../core/lib/phoenix/version', __FILE__)
 version = Phoenix::Version.to_s
