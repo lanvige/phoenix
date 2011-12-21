@@ -17,6 +17,12 @@ module Phoenix
       shell.say "Phoenix Engine #{Phoenix.version}", :green
     end
 
+    desc "app NAME", "create a new application with the given name"
+    method_option "name", :type => :string
+    def extension(name)
+      invoke "phoenix:app:generate", [options[:name] || name]
+    end
+
     desc "extension NAME", "create a new extension with the given name"
     method_option "name", :type => :string
     def extension(name)
