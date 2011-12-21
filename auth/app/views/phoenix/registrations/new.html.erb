@@ -1,0 +1,11 @@
+<div id="signup-form">
+	<h3>Sign Up</h3>
+	<%= simple_form_for( resource, :as => resource_name, :url => registration_path(resource_name) ) do |f|%>
+	<%= devise_error_messages!%>
+	<p><%= f.input :name%></p>
+	<p><%= f.input :email%></p>
+	<p><%= f.input :password%></p>
+	<p><%= f.input :password_confirmation%></p>
+	<p><%= f.button :submit%></p>
+	<p>end of form</p>
+</div>
