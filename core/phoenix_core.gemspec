@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.email        = 'lanvige@gmail.com'
   s.homepage     = 'http://lanvige.com'
 
+  s.rubyforge_project = 'phoenix_core'
+  
   s.files = Dir['{app,config,lib}/**/*'] + ['README.md']
   s.require_path = 'lib'
   s.requirements << 'none'

@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   s.author      = 'Lanvige Jiang'
   s.email       = 'lanvige@gmail.com'
   s.homepage    = 'http://lanvige.com'
+  
+  s.rubyforge_project = 'phoenix_auth'
 
   s.files = Dir['{app,config,lib}/**/*'] + ['README.md']
   s.require_path = 'lib'

@@ -19,12 +19,14 @@ Gem::Specification.new do |s|
   s.email        = 'lanvige@gmail.com'
   s.homepage     = 'http://lanvige.com'  
 
+  s.rubyforge_project = 'phoenix'
+
   s.files          = Dir["{lib}/**/*"] + ["README.md"]
   s.require_path   = 'lib'
   s.requirements   << 'none'
   s.bindir         = 'lib/phoenix/bin'
   s.executables    = %w(phoenix)
-    
+
   s.add_dependency 'bundler'
   s.add_dependency 'phoenix_core',     version
   s.add_dependency 'phoenix_auth',     version
