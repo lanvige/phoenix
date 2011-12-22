@@ -49,15 +49,20 @@ Devise.setup do |config|
   # You can use this to let your user access some features of your application
   # without confirming the account, but blocking it after a certain period
   # (ie 2 days).
-  config.confirm_within = 7.days
+  config.allow_unconfirmed_access_for = 7.days
 
+  # Devise 2.0 now always uses the password salt as basis for the remember token.
+  # You can remove the remember_token column from your models and set Devise.use_salt_as_remember_token to true
+  config.use_salt_as_remember_token = true
+  
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
   config.remember_for = 2.weeks
 
-  # If true, a valid remember token can be re-used between multiple browsers.
-  # config.remember_across_browsers = true
-
+  # Devise now requires you to have a reset_password_sent_at column. 
+  # Please add it to your Devise models and set Devise.reset_password_within to an interval (like 6 hours);
+  config.reset_password_within = 6.hours
+  
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
 

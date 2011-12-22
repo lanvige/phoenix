@@ -19,6 +19,13 @@ module Phoenix
     field :avatar
     field :bio
     field :website
+
+    ## Recoverable
+    field :reset_password_token,   :type => String
+    field :reset_password_sent_at, :type => Time
+      
+    ## Rememberable
+    field :remember_created_at, :type => Time
     
     # define the slug for mongoid_slug
     slug :name
@@ -29,6 +36,7 @@ module Phoenix
     validates_uniqueness_of :name, :email, :case_sensitive => false
 
     attr_accessor  :password_confirmation
+
     
     # Setup accessible (or protected) attributes for user model
     attr_accessible :name, :email, :password, :avatar, :password_confirmation, :remember_me
