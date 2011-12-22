@@ -13,7 +13,7 @@ root = File.expand_path('../../', __FILE__)
     gem_filename = "pkg/#{engine_name}-#{version}.gem"
     gemspec = "#{engine_name}.gemspec"
     
-    task :clean do
+    task :clean_gem do
       package_dir = "#{root}/pkg"
       mkdir_p package_dir unless File.exists?(package_dir)
       rm_f gem_filename
@@ -26,26 +26,26 @@ root = File.expand_path('../../', __FILE__)
       sh cmd
     end
     
-    task :install do
+    task :install_gem do
       cmd = ""
       cmd << "cd #{engine} && " unless engine == "phoenix"
       cmd << "gem install  #{root}/pkg/#{engine_name}-#{version}.gem"
       sh cmd
     end
 
-    task  :uninstall do
+    task  :uninstall_gem do
       cmd = ""
-      cmd << "gem uninstall #{engine_name}.gem -a"
+      cmd << "gem uninstall #{engine_name} -a"
       sh cmd
     end
 
-    task :rebuild => [:clean, :package]
+    task :build_gem => [:clean_gem, :package]
   end
 end
 
 namespace :phoenix do
-  task :cleanup => ENGINES.map { |e| "#{e}:clean" } + ['phoenix:clean']
-  task :build => ENGINES.map { |e| "#{e}:rebuild" } + ['phoenix:rebuild']
-  task :install => ENGINES.map { |e| "#{e}:install" } + ['phoenix:install']
-  task :uninstall => ENGINES.map { |e| "#{e}:uninstall" } + ['phoenix:uninstall']
+  task :clean => ENGINES.map { |e| "#{e}:clean_gem" } + ['phoenix:clean_gem']
+  task :build => ENGINES.map { |e| "#{e}:build_gem" } + ['phoenix:build_gem']
+  task :install => ENGINES.map { |e| "#{e}:install_gem" } + ['phoenix:install_gem']
+  task :uninstall => ENGINES.map { |e| "#{e}:uninstall_gem" } + ['phoenix:uninstall_gem']
 end

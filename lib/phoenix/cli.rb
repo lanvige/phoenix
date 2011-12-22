@@ -1,7 +1,7 @@
 require "rubygems"
 require "phoenix/version"
 require "thor"
-require 'phoenix/extension'
+require "generators/phoenix/extension_generator"
 
 module Phoenix
   class CLI < Thor
@@ -20,7 +20,7 @@ module Phoenix
     desc "app NAME", "create a new application with the given name"
     method_option "name", :type => :string
     def app(name)
-      invoke "phoenix:app:generate", [options[:name] || name]
+      Phoenix::AppGenerator.start
     end
 
     desc "extension NAME", "create a new extension with the given name"

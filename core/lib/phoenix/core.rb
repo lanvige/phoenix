@@ -17,8 +17,11 @@ module Phoenix
   autoload :Version, 'phoenix/version'
   
   autoload :DummyGenerator, 'generators/phoenix/dummy/dummy_generator'
-  autoload :ControllerHelpers,  'generators/phoenix/sandbox/sandbox_generator'
-    
+  autoload :ExtensionGenerator, 'generators/phoenix/extension/extension_generator'
+
+  require 'generators/phoenix/dummy/dummy_generator'
+  require 'generators/phoenix/extension/extension_generator'
+
   module Core
     require 'phoenix/core/engine' if defined?(Rails)
     
