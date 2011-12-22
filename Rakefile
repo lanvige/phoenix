@@ -18,6 +18,3 @@ end
 require "phoenix_testing"
 Phoenix::Testing::Railtie.load_tasks
 Phoenix::Testing::Railtie.load_dummy_tasks(File.dirname(__FILE__))
-
-desc "Build gem files for all projects"
-task :build => "all:build"

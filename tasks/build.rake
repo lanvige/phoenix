@@ -26,10 +26,26 @@ root = File.expand_path('../../', __FILE__)
       sh cmd
     end
     
-    task :build => [:clean, :package]
+    task :install do
+      cmd = ""
+      cmd << "cd #{engine} && " unless engine == "phoenix"
+      cmd << "gem install  #{root}/pkg/#{engine_name}-#{version}.gem"
+      sh cmd
+    end
+
+    task  :uninstall do
+      cmd = ""
+      cmd << "gem uninstall #{engine_name}.gem -a"
+      sh cmd
+    end
+
+    task :rebuild => [:clean, :package]
   end
 end
 
-namespace :all do
-  task :build => ENGINES.map { |e| "#{e}:build" } + ['phoenix:build']
+namespace :phoenix do
+  task :cleanup => ENGINES.map { |e| "#{e}:clean" } + ['phoenix:clean']
+  task :build => ENGINES.map { |e| "#{e}:rebuild" } + ['phoenix:rebuild']
+  task :install => ENGINES.map { |e| "#{e}:install" } + ['phoenix:install']
+  task :uninstall => ENGINES.map { |e| "#{e}:uninstall" } + ['phoenix:uninstall']
 end
