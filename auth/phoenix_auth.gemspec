@@ -25,5 +25,5 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'phoenix_core', version
-  s.add_dependency 'devise',       '2.0.0.rc'
+  s.add_dependency 'devise',       '>= 2.0.0.rc'
 end
