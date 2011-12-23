@@ -608,18 +608,6 @@ textarea {
   font-weight: normal;
   line-height: normal;
 }
-label {
-  padding-top: 6px;
-  font-size: 13px;
-  line-height: 18px;
-  float: left;
-  width: 130px;
-  text-align: right;
-  color: #404040;
-}
-form .input {
-  margin-left: 150px;
-}
 input[type=checkbox], input[type=radio] {
   cursor: pointer;
 }
@@ -1784,11 +1772,6 @@ a.menu:after, .dropdown-toggle:after {
   font-size: 18px;
   font-weight: 200;
   line-height: 27px;
-}
-footer {
-  margin-top: 17px;
-  padding-top: 17px;
-  border-top: 1px solid #eee;
 }
 .page-header {
   margin-bottom: 17px;
