@@ -1,1 +1,1 @@
-require "phoenix/auth/engine"
+require "phoenix/auth"

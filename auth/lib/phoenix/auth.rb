@@ -1,5 +1,6 @@
 require 'phoenix_core'
 require 'devise'
+require 'mongoid'
 require 'mongoid_slug'
 
 module Phoenix
