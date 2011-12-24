@@ -33,15 +33,5 @@ namespace :phoenix do
     task :clean_dummy_app do
       Phoenix::Testing::Railtie.target_engine_path.join('spec', 'dummy').rmtree
     end
-
-    namespace :engine do
-      desc "Initialize the testing environment"
-      task :setup => [:init_test_database]
-
-      task :init_test_database => [
-        'app:db:migrate',
-        'app:db:test:prepare'
-      ]
-    end
   end
 end

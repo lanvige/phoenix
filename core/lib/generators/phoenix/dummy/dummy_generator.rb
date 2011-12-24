@@ -30,7 +30,7 @@ module Phoenix
     def test_dummy_config
       @database = options[:database]
 
-      template "rails/database.yml", "#{dummy_path}/config/database.yml", :force => true
+      template "rails/mongoid.yml", "#{dummy_path}/config/mongoid.yml", :force => true
       template "rails/boot.rb", "#{dummy_path}/config/boot.rb", :force => true
       template "rails/application.rb", "#{dummy_path}/config/application.rb", :force => true
       template "rails/routes.rb", "#{dummy_path}/config/routes.rb", :force => true

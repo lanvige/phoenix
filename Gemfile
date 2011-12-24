@@ -25,6 +25,12 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rcov'
   gem 'faker'
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'guard-spork'
+  
+  platforms :mri_19 do
+    gem 'simplecov'
+  end
   
   gem 'generator_spec'
   gem 'database_cleaner', :git => 'git://github.com/bmabey/database_cleaner.git'

@@ -51,6 +51,7 @@ vendor/cache
 
 # ------------ Test ------------
 # Dummy for Rails RSpec
+/spec/dummy/
 */spec/dummy/
 /spec/tmp/*
 
