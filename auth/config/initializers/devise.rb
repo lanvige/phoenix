@@ -49,7 +49,7 @@ Devise.setup do |config|
   # You can use this to let your user access some features of your application
   # without confirming the account, but blocking it after a certain period
   # (ie 2 days).
-  config.allow_unconfirmed_access_for = 7.days
+  #config.allow_unconfirmed_access_for = 7.days
 
   # Devise 2.0 now always uses the password salt as basis for the remember token.
   # You can remove the remember_token column from your models and set Devise.use_salt_as_remember_token to true

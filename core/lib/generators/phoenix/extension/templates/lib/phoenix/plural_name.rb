@@ -1,14 +1,14 @@
-require 'refinerycms-core'
+require 'phoenix_core'
 
 module Phoenix
-  autoload :<%= class_name.pluralize %>Generator, 'generators/refinery/<%= plural_name %>_generator'
+  autoload :<%= class_name.pluralize %>Generator, 'generators/phoenix/<%= plural_name %>_generator'
 
   module <%= class_name.pluralize %><%= 'Engine' if plural_name == singular_name %>
-    require 'refinery/<%= plural_name %>/engine' if defined?(Rails)
+    require 'phoenix/<%= plural_name %>/engine' if defined?(Rails)
 
     class << self
       def table_name_prefix
-        'refinery_'
+        'phoenix_'
       end
 
       attr_writer :root

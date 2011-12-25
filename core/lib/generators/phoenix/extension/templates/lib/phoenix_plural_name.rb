@@ -1,1 +1,1 @@
-require 'refinery/<%= plural_name %>'
+require 'phoenix/<%= plural_name %>'

@@ -4,7 +4,7 @@
 <aside id='actions'>
   <%%= render :partial => 'actions' %>
 </aside>
-<%%= render :partial => '/refinery/admin/make_sortable',
+<%%= render :partial => '/phoenix/admin/make_sortable',
             :locals => {
               :tree => false
             } if !searching? and ::Phoenix::Admin::<%= class_name.pluralize %>Controller.sortable? and ::Phoenix::<%= class_name.pluralize %>::<%= class_name %>.count > 1 %>

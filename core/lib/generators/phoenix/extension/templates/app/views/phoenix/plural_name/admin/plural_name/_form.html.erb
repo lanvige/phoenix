@@ -2,8 +2,8 @@
   text_areas = attributes.reject{|a| a.field_type.to_s != 'text_area'}
   generated_text_areas = false
 -%>
-<%%= form_for [main_app, :refinery_admin, @<%= singular_name %>] do |f| -%>
-  <%%= render :partial => "/refinery/admin/error_messages", :locals => {
+<%%= form_for [main_app, :phoenix_admin, @<%= singular_name %>] do |f| -%>
+  <%%= render :partial => "/phoenix/admin/error_messages", :locals => {
           :object => @<%= singular_name %>,
           :include_object_name => true
         } %>
@@ -13,14 +13,14 @@
     <%%= f.label :<%= attribute.name %> -%>
 <% end -%>
 <% if attribute.type.to_s == 'image' -%>
-    <%%= render :partial => "/refinery/admin/image_picker", :locals => {
+    <%%= render :partial => "/phoenix/admin/image_picker", :locals => {
           :f => f,
           :field => :<%= "#{attribute.name}_id".gsub("_id_id", "_id") %>,
           :image => @<%= singular_name %>.<%= attribute.name.gsub("_id", "") %>,
           :toggle_image_display => false
         } %>
 <% elsif attribute.type.to_s == 'resource' -%>
-    <%%= render :partial => "/refinery/admin/resource_picker", :locals => {
+    <%%= render :partial => "/phoenix/admin/resource_picker", :locals => {
           :f => f,
           :field => :<%= "#{attribute.name}_id".gsub("_id_id", "_id") %>,
           :resource => @<%= singular_name %>.<%= attribute.name.gsub("_id", "") %>,
@@ -49,12 +49,12 @@
 <% end -%>
   </div>
   <% end %>
-  <%%= render :partial => "/refinery/admin/form_actions",
+  <%%= render :partial => "/phoenix/admin/form_actions",
               :locals => {
                 :f => f,
                 :continue_editing => false,
-                :delete_title => t('delete', :scope => 'refinery.admin.<%= plural_name %>.<%= singular_name %>'),
-                :delete_confirmation => t('message', :scope => 'refinery.admin.delete'<% if (title = attributes.detect { |a| a.type.to_s == "string" }).present? %>, :title => @<%= singular_name %>.<%= title.name %><% end %>)
+                :delete_title => t('delete', :scope => 'phoenix.admin.<%= plural_name %>.<%= singular_name %>'),
+                :delete_confirmation => t('message', :scope => 'phoenix.admin.delete'<% if (title = attributes.detect { |a| a.type.to_s == "string" }).present? %>, :title => @<%= singular_name %>.<%= title.name %><% end %>)
               } %>
 <%% end -%>
 <% if text_areas.any? -%>

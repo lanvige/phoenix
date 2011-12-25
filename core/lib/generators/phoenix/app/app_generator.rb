@@ -69,7 +69,7 @@ module Phoenix
         note << "you will need to run the following tasks manually to maintain correct operation:"
         note << "\ncd #{app_pathname}"
         note << "bundle exec rake db:create"
-        note << "bundle exec rails generate phoenix:cms"
+        note << "bundle exec rails generate phoenix:blog"
         note << "bundle exec rake db:migrate"
         note << "\n---------\n"
       end

@@ -2,9 +2,10 @@ source 'http://rubygems.org'
 
 gemspec
 
-# rake is not part of the bundle 1.1.0
-gem 'rake'
-gem 'json'
+# Databse
+gem "bson_ext"
+gem "mongoid"
+gem "mongoid_slug", :require => 'mongoid/slug'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,36 +21,25 @@ gem "haml"
 gem 'jquery-rails'
 
 group :development, :test do
+  # gem 'phoenix_testing'
+  
+  gem 'generator_spec'
+  gem 'database_cleaner', :git => 'git://github.com/bmabey/database_cleaner.git'
+  
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'rcov'
   gem 'faker'
-  gem 'spork', '~> 0.9.0.rc'
-  gem 'guard-spork'
   
   platforms :mri_19 do
     gem 'simplecov'
   end
   
-  gem 'generator_spec'
-  gem 'database_cleaner', :git => 'git://github.com/bmabey/database_cleaner.git'
-end
-
-# Databse
-gem "bson_ext"
-gem "mongoid"
-gem "mongoid_slug", :require => 'mongoid/slug'
-
-
-group :cucumber do
-  gem 'cucumber-rails'
-  gem 'nokogiri'
-  gem 'capybara'
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'launchy'
+  platforms :ruby do
+    gem 'spork', '~> 0.9.0.rc'
+    gem 'guard-spork'
+  end
 end
 
 if RUBY_VERSION < "1.9"

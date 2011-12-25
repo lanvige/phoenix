@@ -62,6 +62,9 @@ vendor/cache
 /coverage.data
 /coverage/
 
+# RCov
+/coverage
+
 # scm revert files
 **.orig
 

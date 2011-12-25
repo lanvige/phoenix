@@ -1,7 +1,7 @@
 namespace :phoenix do
   namespace :testing do
     desc "Generates a dummy app for testing"
-    task :dummy_app => [:setup_dummy_app, :migrate_dummy_app]
+    task :dummy_app => [:setup_dummy_app]
 
     task :setup_dummy_app do
       require 'phoenix'
@@ -13,20 +13,6 @@ namespace :phoenix do
       # Load generated dummy app after generation - some of the follow
       # generators depend on Rails.root being available
       # load File.join(ENGINE_PATH, 'spec/dummy/config/environment.rb')
-    end
-
-    task :migrate_dummy_app do
-      engines = %w(
-        phoenix_core
-        phoenix_settings
-      )
-
-      task_params = [%Q{ bundle exec rake -f #{Phoenix::Testing::Railtie.target_engine_path.join('Rakefile')} }]
-      task_params << %Q{ app:railties:install:migrations FROM="#{engines.join(', ')}" }
-      task_params << %Q{ app:db:drop app:db:create app:db:migrate app:db:seed app:db:test:prepare }
-      task_params << %Q{ RAILS_ENV=development --quiet }
-
-      system task_params.join(' ')
     end
 
     desc "Remove the dummy app used for testing"

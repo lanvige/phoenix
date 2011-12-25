@@ -5,7 +5,7 @@ module Phoenix
   class DummyGenerator < Rails::Generators::Base
     desc "Creates blank Rails application, installs Phoenix Engine, and all sample data"
 
-    class_option :database, :default => ''
+    #class_option :database, :default => ''
 
     def self.source_paths
       paths = self.superclass.source_paths
@@ -19,7 +19,7 @@ module Phoenix
 
     def generate_test_dummy
       opts = (options || {}).slice(*PASSTHROUGH_OPTIONS)
-      opts[:database] = 'sqlite3' if opts[:database].blank?
+      #opts[:database] = 'sqlite3' if opts[:database].blank?
       opts[:force] = true
       opts[:skip_bundle] = true
       opts[:old_style_hash] = true
@@ -28,7 +28,7 @@ module Phoenix
     end
 
     def test_dummy_config
-      @database = options[:database]
+      #@database = options[:database]
 
       template "rails/mongoid.yml", "#{dummy_path}/config/mongoid.yml", :force => true
       template "rails/boot.rb", "#{dummy_path}/config/boot.rb", :force => true
@@ -51,8 +51,6 @@ module Phoenix
         remove_file "vendor"
       end
     end
-
-    attr :database
 
     protected
 
