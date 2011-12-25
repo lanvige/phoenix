@@ -1,12 +1,41 @@
-<div id="signup-form">
-	<h3>Sign Up</h3>
-	<%= simple_form_for( resource, :as => resource_name, :url => registration_path(resource_name) ) do |f| %>
-	<%= devise_error_messages!%>
-	<p><%= f.input :name%></p>
-	<p><%= f.input :email%></p>
-	<p><%= f.input :password%></p>
-	<p><%= f.input :password_confirmation%></p>
-	<p><%= f.button :submit%></p>
-	<p>end of form</p>
-	<% end %>
+<div id="register">
+	<h2>Sign Up</h2>
+	<p class="grey">
+		Already a member? <%= link_to "Sign In", login_path %>
+	</p>
+	<div id="form-register" class="">
+		<div class="form-wrapper">
+			<%= simple_form_for( resource, :as => resource_name, :url => registration_path(resource_name) ) do |f| %>
+			<%= devise_error_messages!%>
+				<div class="field">
+					<div class="input-wrapper">
+						<label class="input-placeholder" for="">Email address</label>
+						<%= f.input :email%>
+					</div>
+				</div>
+				<div class="field">
+					<div class="input-wrapper">
+						<label class="input-placeholder" for="">Username</label>
+						<%= f.input :name%>
+					</div>
+				</div>
+				<div class="field">
+					<div class="input-wrapper">
+						<label class="input-placeholder" for="">Password</label>
+						<%= f.input :password%>
+					</div>
+				</div>
+				<div class="field">
+					<div class="input-wrapper">
+						<label class="input-placeholder" for="">Confirm password</label>
+						<%= f.input :password%>
+					</div>
+				</div>
+				<div class="field">
+					<%= f.button :submit%>
+				</div>
+			<% end %>
+			
+		</div>
+	</div>
 </div>
