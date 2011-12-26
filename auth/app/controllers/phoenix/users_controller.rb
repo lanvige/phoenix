@@ -1,6 +1,8 @@
 module Phoenix
   class UsersController < Phoenix::BaseController
     before_filter :authenticate_user!, :except => [:index]
+    
+    layout "/phoenix/layouts/application"
 
     def index
       @users = User.all

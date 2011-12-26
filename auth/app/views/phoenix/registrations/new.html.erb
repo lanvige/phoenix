@@ -9,33 +9,32 @@
 			<%= devise_error_messages!%>
 				<div class="field">
 					<div class="input-wrapper">
-						<label class="input-placeholder" for="">Email address</label>
-						<%= f.input :email%>
+						<%= f.label :email, t(:email), :class => "input-placeholder" %>
+  						<%= f.email_field :email, :class => "" %>
 					</div>
 				</div>
 				<div class="field">
 					<div class="input-wrapper">
-						<label class="input-placeholder" for="">Username</label>
-						<%= f.input :name%>
+						<%= f.label :name, t(:username), :class => "input-placeholder" %>
+  						<%= f.text_field :name, :class => "" %>
 					</div>
 				</div>
 				<div class="field">
 					<div class="input-wrapper">
-						<label class="input-placeholder" for="">Password</label>
-						<%= f.input :password%>
+						<%= f.label :password, t(:password), :class => "input-placeholder" %>
+  						<%= f.password_field :password, :class => "" %>
 					</div>
 				</div>
 				<div class="field">
 					<div class="input-wrapper">
-						<label class="input-placeholder" for="">Confirm password</label>
-						<%= f.input :password%>
+						<%= f.label :password, t(:confirm_password), :class => "input-placeholder" %>
+  						<%= f.password_field :password, :class => "" %>
 					</div>
 				</div>
 				<div class="field">
-					<%= f.button :submit%>
+					<%= f.button :submit, "Sign Up", :class => "btn"%>
 				</div>
 			<% end %>
-			
 		</div>
 	</div>
 </div>

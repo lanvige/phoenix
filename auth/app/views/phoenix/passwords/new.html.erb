@@ -1,0 +1,24 @@
+<div id="find-password">
+	<h2>Find password</h2>
+	<p class="grey">
+		Input your email you registered with, and confirm.
+	</p>
+	<div id="form-login" class="">
+		<div class="form-wrapper">
+			<%= form_for(resource, :as => resource_name, :url => password_path(resource_name)) do |f|%>
+			<%= devise_error_messages!%>
+				<div class="field">
+					<div class="input-wrapper">
+						<%= f.label :email, t(:email), :class => "input-placeholder" %>
+  						<%= f.email_field :email, :class => "" %>
+					</div>
+				</div>
+				<div class="field">
+					<%= f.submit "Confirm", :class => "btn"%>
+					 or <%= link_to "cancel", login_path %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
