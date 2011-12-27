@@ -9,14 +9,12 @@
 			<%= devise_error_messages!%>
 				<div class="field">
 					<div class="input-wrapper">
-						<%= f.label :email, t(:email_or_username), :class => "input-placeholder" %>
-  						<%= f.email_field :email, :class => "" %>
+  						<%= f.email_field :email, :class => "", :placeholder => "Email or username" %>
 					</div>
 				</div>
 				<div class="field">
 					<div class="input-wrapper">
-						<%= f.label :password, t(:password), :class => "input-placeholder" %>
-  						<%= f.password_field :password, :class => "" %>
+  						<%= f.password_field :password, :class => "", :placeholder => "Password" %>
 					</div>
 				</div>
 				<% if devise_mapping.rememberable? %>

@@ -9,26 +9,17 @@
 			<%= devise_error_messages!%>
 				<div class="field">
 					<div class="input-wrapper">
-						<%= f.label :email, t(:email), :class => "input-placeholder" %>
-  						<%= f.email_field :email, :class => "" %>
+  						<%= f.email_field :email, :class => "", :placeholder => "Email address" %>
 					</div>
 				</div>
 				<div class="field">
 					<div class="input-wrapper">
-						<%= f.label :name, t(:username), :class => "input-placeholder" %>
-  						<%= f.text_field :name, :class => "" %>
+  						<%= f.text_field :name, :class => "", :placeholder => "Username" %>
 					</div>
 				</div>
 				<div class="field">
 					<div class="input-wrapper">
-						<%= f.label :password, t(:password), :class => "input-placeholder" %>
-  						<%= f.password_field :password, :class => "" %>
-					</div>
-				</div>
-				<div class="field">
-					<div class="input-wrapper">
-						<%= f.label :password, t(:confirm_password), :class => "input-placeholder" %>
-  						<%= f.password_field :password, :class => "" %>
+  						<%= f.password_field :password, :class => "", :placeholder => "Password" %>
 					</div>
 				</div>
 				<div class="field">
