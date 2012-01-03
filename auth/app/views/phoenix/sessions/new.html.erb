@@ -1,41 +1,37 @@
-<div id="signin-form">
-	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-	<fieldset>
-		<legend>
-			Sign In
-		</legend>
-		<div class="clearfix">
-			<label><%= f.label :email %></label>
-			<div class="input">
-				<%= f.email_field :email %>
-			</div>
+<div id="login">
+	<h2>Sign In</h2>
+	<p class="grey">
+		Please sign in, or <%= link_to "Register", signup_path %>
+	</p>
+	<div id="form-login" class="">
+		<div class="form-wrapper">
+			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			<%= devise_error_messages!%>
+				<div class="field">
+					<div class="input-wrapper">
+  						<%= f.email_field :email, :class => "", :placeholder => "Email or username" %>
+					</div>
+				</div>
+				<div class="field">
+					<div class="input-wrapper">
+  						<%= f.password_field :password, :class => "", :placeholder => "Password" %>
+					</div>
+				</div>
+				<% if devise_mapping.rememberable? %>
+				<div class="field">
+					<div class="input-wrapper">
+						<%= f.check_box :remember_me, :class => "" %>
+  						<%= f.label :remember_me, t(:remember_me) %>
+					</div>
+				</div>
+				<% end %>
+				<div class="field">
+					<%= f.button :submit, "Sign In", :class => "btn"%>
+				</div>
+			<% end %>
 		</div>
-		<div class="clearfix">
-			<label><%= f.label :password %></label>
-			<div class="input">
-				<%= f.password_field :password %>
-			</div>
-		</div>
-		<% if devise_mapping.rememberable? %>
-		<div class="clearfix">
-			<label></label>
-			<ul class="inputs-list">
-				<li>
-					<label> <%= f.check_box :remember_me %> <span><%= f.label :remember_me %></span> </label>
-				</li>
-			</ul>
-		</div>
-		<% end %>
-		<div class="clearfix">
-			<%= f.submit "Sign in" %>
-		</div>
-		<% end %>
-		<div class="clearfix">
-			<%= link_to t(:create_a_new_account), signup_path %>
-			<br />
-			<%= link_to "Forgot your password?", new_user_password_path %>
-			<br />
-			<%= link_to "Didn't receive confirmation instructions?", new_user_confirmation_path %>
-		</div>
-	</fieldset>
+		<p class="grey">
+			<%= link_to "Forget your password?", new_user_password_path %>
+		</p>
+	</div>
 </div>

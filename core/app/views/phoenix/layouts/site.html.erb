@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<%= render :partial => 'phoenix/shared/head' %>
+</head>
+<body>
+	<header>
+		<%= render :partial => 'phoenix/shared/header' %>
+	</header>
+	<div id="body">
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
+	<footer>
+		<%= render :partial => 'phoenix/shared/footer' %>
+	</footer>
+</body>
+</html>

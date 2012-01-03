@@ -1,2 +1,7 @@
 #   Copyright (c) 2011, Phoenix Project.
 #   Phoenix i18n English.
+---
+en:
+  no: "No"
+  yes: "Yes"
+  email: "Email"

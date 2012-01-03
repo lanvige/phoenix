@@ -2,7 +2,7 @@ module Phoenix
   class SessionsController < Devise::SessionsController
     include Phoenix::Core::ControllerHelpers
     
-    layout "/phoenix/layouts/login"
+    layout "/phoenix/layouts/site"
 
     # GET /resource/sign_in
     def new

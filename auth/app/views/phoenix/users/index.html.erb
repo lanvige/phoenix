@@ -1,0 +1,5 @@
+<h2>All users</h2>
+<% @users.each do |user| %>
+	<%= link_to user.name, user_path(user)%> <br />
+	<%= link_to "Change my password", edit_password_path(user)%>
+<% end %>
