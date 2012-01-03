@@ -30,6 +30,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'bundler'
   s.add_dependency 'phoenix_core',     version
   s.add_dependency 'phoenix_auth',     version
-  s.add_dependency 'phoenix_social',   version
   s.add_dependency 'phoenix_testing',  version
 end
