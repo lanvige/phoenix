@@ -1,4 +1,4 @@
-ENGINES = %w{ settings core auth testing }
+ENGINES = %w{ core auth testing }
 
 require File.expand_path('../../core/lib/phoenix/version', __FILE__)
 version = Phoenix::Version.to_s

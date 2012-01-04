@@ -1,7 +1,6 @@
 engines = %w(
   auth
   core
-  settings
 )
 
 guard 'spork', :wait => 60, :cucumber => false, :rspec_env => { 'RAILS_ENV' => 'test' } do

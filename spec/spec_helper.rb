@@ -2,6 +2,9 @@ $VERBOSE = ENV['VERBOSE'] || false
 
 require 'rubygems'
 
+require 'database_cleaner'
+require 'phoenix/core/url_helpers'
+
 if RUBY_VERSION > "1.9"
   require "simplecov"
 end
@@ -20,6 +23,7 @@ end
 ENGINE_RAILS_ROOT = File.join(File.dirname(__FILE__), '../') unless defined?(ENGINE_RAILS_ROOT)
 
 def setup_environment
+  puts "================================"
   # Configure Rails Environment
   ENV["RAILS_ENV"] ||= 'test'
   # simplecov should be loaded _before_ models, controllers, etc are loaded.
@@ -37,6 +41,18 @@ def setup_environment
     config.treat_symbols_as_metadata_keys_with_true_values = true
     config.filter_run :focus => true
     config.run_all_when_everything_filtered = true
+    
+    config.before(:each) do
+      DatabaseCleaner.start
+    end
+    
+    config.after(:each) do
+      DatabaseCleaner.clean
+    end
+    
+    config.include Phoenix::Core::UrlHelpers
+    config.include Devise::TestHelpers, :type => :controller
+    config.include Rack::Test::Methods, :type => :requests
   end
 
   # set javascript driver for capybara
