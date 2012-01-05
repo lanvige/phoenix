@@ -24,10 +24,10 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
   
-  s.add_dependency 'rails',                 '~> 3.1.3'
+  s.add_dependency 'rails',                 '~> 3.2.0.rc2'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'haml'
-  s.add_dependency 'sass-rails',            '~> 3.1.5'
+  s.add_dependency 'sass-rails',            '~> 3.2.3'
   s.add_dependency 'mongoid'
   s.add_dependency 'mongoid_slug'
 
