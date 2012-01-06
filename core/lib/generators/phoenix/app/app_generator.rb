@@ -54,7 +54,7 @@ module Phoenix
       run_bundle
 
       rake('phoenix_core:install')
-      rake('phoenix_auth:install')
+      #rake('phoenix_auth:install')
 
       rake("db:migrate#{' --trace' if options[:trace]}")
 

@@ -1,5 +1,4 @@
 engines = %w(
-  auth
   core
 )
 
