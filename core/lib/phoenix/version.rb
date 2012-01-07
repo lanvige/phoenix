@@ -2,7 +2,7 @@ module Phoenix
   class Version
     @major = 0
     @minor = 2
-    @tiny  = 0
+    @tiny  = 1
     @build = 'beta'
 
     class << self

@@ -1,4 +1,4 @@
-ENGINES = %w{ core auth testing }
+ENGINES = %w{ core testing }
 
 require File.expand_path('../../core/lib/phoenix/version', __FILE__)
 version = Phoenix::Version.to_s
@@ -28,7 +28,6 @@ root = File.expand_path('../../', __FILE__)
     
     task :install_gem do
       cmd = ""
-      cmd << "cd #{engine} && " unless engine == "phoenix"
       cmd << "gem install  #{root}/pkg/#{engine_name}-#{version}.gem"
       sh cmd
     end
