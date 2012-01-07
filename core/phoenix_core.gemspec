@@ -5,25 +5,25 @@ require 'phoenix/version'
 version = Phoenix::Version.to_s
 
 # Describe your gem and declare its dependencies:
-Gem::Specification.new do |s|
+uem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.9.2'
-    
+
   s.name        = 'phoenix_core'
   s.version     = version
-  s.summary     = 'Core Engine.'
+  s.summary     = 'Phoenix Engine Core Project.'
   s.description = 'Its used for build core structure, dont contain biz.'
-  
+
   s.author       = 'Lanvige Jiang'
   s.email        = 'lanvige@gmail.com'
   s.homepage     = 'http://lanvige.com'
 
   s.rubyforge_project = 'phoenix_core'
-  
+
   s.files = Dir['{app,config,lib}/**/*'] + ['README.md']
   s.require_path = 'lib'
   s.requirements << 'none'
-  
+
   s.add_dependency 'rails',                 '~> 3.1.3'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'haml'

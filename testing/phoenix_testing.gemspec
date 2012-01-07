@@ -6,18 +6,17 @@ version = Phoenix::Version.to_s
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.platform    = Gem::Platform::RUBY
+  s.platform     = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.9.2'
     
-  s.name        = 'phoenix_testing'
-  s.version     = version
+  s.name         = 'phoenix_testing'
+  s.version      = version
+  s.summary      = 'Testing plugin for Phoenix Engine'
+  s.description  = 'This plugin adds the ability to run cucumber and rspec against the Pheonix Engine project'
 
-  s.summary           = 'Testing plugin for Phoenix Engine'
-  s.description       = 'This plugin adds the ability to run cucumber and rspec against the Pheonix Engine project'
-
-  s.author      = 'Lanvige Jiang'
-  s.email       = 'lanvige@gmail.com'
-  s.homepage    = 'http://lanvige.com'
+  s.author       = 'Lanvige Jiang'
+  s.email        = 'lanvige@gmail.com'
+  s.homepage     = 'http://lanvige.com'
 
   s.rubyforge_project = 'phoenix_testing'
   
