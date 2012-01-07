@@ -80,6 +80,7 @@ vendor/cache
 
 # Textmate project files
 /*.tmproj
+.tm_properties
 
 # Sublime text project
 /*.sublime-project
