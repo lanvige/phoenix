@@ -37,6 +37,13 @@ root = File.expand_path('../../', __FILE__)
       cmd << "gem uninstall #{engine_name} -a"
       sh cmd
     end
+    
+    task  :publish_gem do
+      cmd = ""
+      cmd << "gem push #{engine_name}"
+      sh cmd
+    end
+    
 
     task :build_gem => [:clean_gem, :package]
   end
@@ -47,4 +54,5 @@ namespace :phoenix do
   task :build => ENGINES.map { |e| "#{e}:build_gem" } + ['phoenix:build_gem']
   task :install => ENGINES.map { |e| "#{e}:install_gem" } + ['phoenix:install_gem']
   task :uninstall => ENGINES.map { |e| "#{e}:uninstall_gem" } + ['phoenix:uninstall_gem']
+  task :publish => ENGINES.map { |e| "#{e}:publish_gem" } + ['phoenix:publish_gem']
 end
