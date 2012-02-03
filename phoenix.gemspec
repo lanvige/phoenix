@@ -28,6 +28,6 @@ Gem::Specification.new do |s|
   s.executables    = %w(phoenix)
 
   s.add_dependency 'bundler'
-  s.add_dependency 'phoenix_core',     version
-  s.add_dependency 'phoenix_testing',  version
+  s.add_dependency 'phoenix_core',            version
+  s.add_dependency 'phoenix_authentication',  version
 end
