@@ -1,0 +1,12 @@
+%h2
+  All Users List
+- @users.each do |user|
+  %p 
+  User: 
+  /= link_to user.name, user
+  / 如何打造新的用户id地址。。。。
+  = link_to user.name, user_path(user)
+  /= user_name_tag(user)
+  %br
+  = link_to "Change my password", edit_password_path(user)
+
