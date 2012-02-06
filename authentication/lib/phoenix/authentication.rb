@@ -1,10 +1,8 @@
 require 'phoenix_core'
 require 'devise'
-require 'mongoid'
-require 'mongoid_slug'
 
 module Phoenix
-  module Auth
+  module Authentication
   end
 end
 

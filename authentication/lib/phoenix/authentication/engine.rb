@@ -4,7 +4,7 @@ module Phoenix
   module Authentication
     class Engine < Rails::Engine
       isolate_namespace Phoenix
-      engine_name 'phoenix_auth'
+      engine_name 'phoenix_authentication'
 
       config.autoload_paths += %W(#{config.root}/lib)
       # Load the locals under sub-folder

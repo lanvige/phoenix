@@ -3,9 +3,10 @@
 	<p class="grey">
 		Please sign in, or <%= link_to "Register", signup_path %>
 	</p>
+	<%= user_session_path %>
 	<div id="form-login" class="">
 		<div class="form-wrapper">
-			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			<%= simple_form_for(resource, :as => resource_name, :url => user_session_path) do |f| %>
 			<%= devise_error_messages!%>
 				<div class="field">
 					<div class="input-wrapper">

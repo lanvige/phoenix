@@ -27,11 +27,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails',                 '~> 3.2.1'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'haml'
-  s.add_dependency 'sass-rails'
+  #s.add_dependency 'sass-rails'
 
-  s.add_dependency 'state_machine'
-  s.add_dependency 'simple_form'
-  s.add_dependency 'stringex'
+  #s.add_dependency 'state_machine'
+  #s.add_dependency 'simple_form'
+  #s.add_dependency 'stringex'
 
-  s.add_development_dependency 'haml-rails'
+  #s.add_development_dependency 'haml-rails'
 end

@@ -5,8 +5,7 @@
 	</p>
 	<div id="form-register" class="">
 		<div class="form-wrapper">
-			<%= simple_form_for( resource, :as => resource_name, :url => registration_path(resource_name) ) do |f| %>
-			<%= devise_error_messages!%>
+			<%= form_for :user, :url => user_registration_path(@user) do |f| %>
 				<div class="field">
 					<div class="input-wrapper">
   						<%= f.email_field :email, :class => "", :placeholder => "Email address" %>
@@ -23,7 +22,7 @@
 					</div>
 				</div>
 				<div class="field">
-					<%= f.button :submit, "Sign Up", :class => "btn"%>
+					<%= f.submit "Sign Up", :class => "btn"%>
 				</div>
 			<% end %>
 		</div>

@@ -3,15 +3,24 @@ source 'http://rubygems.org'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
+  gem 'sass-rails',   '~> 3.2.4'
+  gem 'coffee-rails', '~> 3.2.2'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer'
+
+  gem 'uglifier', '>= 1.2.3'
 end
+
+gem 'jquery-rails'
+
+#gem "haml", ">= 3.1.4"
+gem "haml-rails", ">= 0.3.4", :group => :development
 
 group :test do
   gem 'guard'
   gem 'guard-rspec', '~> 0.5.0'
-  gem 'rspec-rails', '~> 2.8.0'
+  gem 'rspec-rails', '~> 2.8.1'
   gem 'factory_girl_rails', '~> 1.4.0'
   gem 'ffaker'
   gem 'shoulda-matchers', '~> 1.0.0'

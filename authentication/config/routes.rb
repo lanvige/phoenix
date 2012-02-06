@@ -15,7 +15,7 @@ Phoenix::Core::Engine.routes.draw do
   end
 
   #resources :users, :only => [:index, :show, :edit, :update] do  
-  resources :users do
-    resources :profile, :controller => 'profiles'
-  end
+  #resources :users
+  #  resources :profile, :controller => 'profiles'
+  #end
 end
