@@ -1,13 +1,13 @@
 Phoenix::Core::Engine.routes.draw do
-devise_for :users, {
-  class_name:   'Phoenix::User',
-  module: :devise,
-  controllers: { 
-    :registrations => "phoenix/registrations",
-    :confirmations => "phoenix/confirmations",
-    :passwords => "phoenix/passwords",
-    :sessions => "phoenix/sessions" }    
-}
+  devise_for :users, {
+    class_name:   'Phoenix::User',
+    module: :devise,
+    controllers: { 
+      :registrations => "phoenix/registrations",
+      :confirmations => "phoenix/confirmations",
+      :passwords => "phoenix/passwords",
+      :sessions => "phoenix/sessions" }    
+    }
 
   devise_scope :user do
     get '/signup' => 'registrations#new', :as => :signup
