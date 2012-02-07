@@ -11,7 +11,7 @@ module Phoenix
       config.i18n.load_path += Dir[File.join(config.root, 'config', 'locales', '**', '*.{rb,yml}').to_s]
 
       # Register Mongoid observers
-      config.mongoid.observers = :'phoenix/user_observer'
+      # config.mongoid.observers = :'phoenix/user_observer'
       
       def self.activate
         Dir.glob(File.join(File.dirname(__FILE__), "../../../app/**/*_decorator*.rb")) do |c|
@@ -23,10 +23,10 @@ module Phoenix
         end
       end
         
-      config.to_prepare &method(:activate).to_proc
+      #config.to_prepare &method(:activate).to_proc
       
-      initializer "phoenix.authentication.environment", :after => 'phoenix.environment' do |app|
-      end
+      #initializer "phoenix.authentication.environment", :after => 'phoenix.environment' do |app|
+      #end
     end
   end
 end
