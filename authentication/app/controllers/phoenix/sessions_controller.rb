@@ -6,6 +6,7 @@ module Phoenix
 
     # GET /resource/sign_in
     def new
+      logger.debug("___________________________________________________________________")
       super
     end
 
