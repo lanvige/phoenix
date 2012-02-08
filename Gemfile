@@ -1,45 +1,33 @@
 source 'http://rubygems.org'
 
-gemspec
-
-# Databse
-gem "bson_ext"
-gem "mongoid"
-gem "mongoid_slug", :require => 'mongoid/slug'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
+  gem 'sass-rails',   '~> 3.2.4'
+  gem 'coffee-rails', '~> 3.2.2'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer'
+
+  gem 'uglifier', '>= 1.2.3'
 end
 
-# Asset template engines
-gem "simple_form"
-gem "haml"
 gem 'jquery-rails'
 
-group :development, :test do
-  # gem 'phoenix_testing'
-  
-  gem 'generator_spec'
-  gem 'database_cleaner', :git => 'git://github.com/bmabey/database_cleaner.git'
-  
-  gem 'rspec-rails'
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
-  gem 'rcov'
-  gem 'faker'
-  
-  platforms :mri_19 do
-    gem 'simplecov'
-  end
-  
-  platforms :ruby do
-    gem 'spork', '~> 0.9.0.rc'
-    gem 'guard-spork'
-  end
+#gem "haml", ">= 3.1.4"
+gem "haml-rails", ">= 0.3.4", :group => :development
+
+group :test do
+  gem 'guard'
+  gem 'guard-rspec', '~> 0.5.0'
+  gem 'rspec-rails', '~> 2.8.1'
+  gem 'factory_girl_rails', '~> 1.4.0'
+  gem 'ffaker'
+  gem 'shoulda-matchers', '~> 1.0.0'
+  gem 'capybara'
+  gem 'selenium-webdriver', '2.14.0'
+  gem 'database_cleaner'
+  gem 'launchy'
 end
 
 if RUBY_VERSION < "1.9"
@@ -47,3 +35,5 @@ if RUBY_VERSION < "1.9"
 else
   gem "ruby-debug19"
 end
+
+gemspec

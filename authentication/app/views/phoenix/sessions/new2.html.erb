@@ -1,0 +1,38 @@
+<div id="login">
+	<h2>Sign In</h2>
+	<p class="grey">
+		Please sign in, or <%= link_to "Register", signup_path %>
+	</p>
+	<%= user_session_path %>
+	<div id="form-login" class="">
+		<div class="form-wrapper">
+			<%= simple_form_for(resource, :as => resource_name, :url => user_session_path) do |f| %>
+			<%= devise_error_messages!%>
+				<div class="field">
+					<div class="input-wrapper">
+  						<%= f.email_field :email, :class => "", :placeholder => "Email or username" %>
+					</div>
+				</div>
+				<div class="field">
+					<div class="input-wrapper">
+  						<%= f.password_field :password, :class => "", :placeholder => "Password" %>
+					</div>
+				</div>
+				<% if devise_mapping.rememberable? %>
+				<div class="field">
+					<div class="input-wrapper">
+						<%= f.check_box :remember_me, :class => "" %>
+  						<%= f.label :remember_me, t(:remember_me) %>
+					</div>
+				</div>
+				<% end %>
+				<div class="field">
+					<%= f.button :submit, "Sign In", :class => "btn"%>
+				</div>
+			<% end %>
+		</div>
+		<p class="grey">
+			<%= link_to "Forget your password?", new_user_password_path %>
+		</p>
+	</div>
+</div>

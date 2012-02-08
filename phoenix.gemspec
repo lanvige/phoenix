@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   
   s.name        = "phoenix"
   s.version     = version
-  s.summary     = 'Engine deom 4 rails 3.'
-  s.description = 'Engine deom 4 rails 3.'
+  s.summary     = 'Phoenix common system engine.'
+  s.description = 'Phoenix Engine is a powerful framework to build scalable web system.'
   
   s.author       = 'Lanvige Jiang'
   s.email        = 'lanvige@gmail.com'
@@ -28,7 +28,6 @@ Gem::Specification.new do |s|
   s.executables    = %w(phoenix)
 
   s.add_dependency 'bundler'
-  s.add_dependency 'phoenix_core',     version
-  s.add_dependency 'phoenix_auth',     version
-  s.add_dependency 'phoenix_testing',  version
+  s.add_dependency 'phoenix_core',            version
+  s.add_dependency 'phoenix_authentication',  version
 end

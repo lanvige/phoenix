@@ -15,6 +15,6 @@ Dir[File.expand_path('../tasks/**/*', __FILE__)].each do |task|
   load task
 end
 
-require "phoenix_testing"
-Phoenix::Testing::Railtie.load_tasks
-Phoenix::Testing::Railtie.load_dummy_tasks(File.dirname(__FILE__))
+#require "phoenix_testing"
+#Phoenix::Testing::Railtie.load_tasks
+#Phoenix::Testing::Railtie.load_dummy_tasks(File.dirname(__FILE__))

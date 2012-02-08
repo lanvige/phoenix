@@ -1,0 +1,30 @@
+<div id="register">
+	<h2>Sign Up</h2>
+	<p class="grey">
+		Already a member? <%= link_to "Sign In", login_path %>
+	</p>
+	<div id="form-register" class="">
+		<div class="form-wrapper">
+			<%= form_for :user, :url => user_registration_path(@user) do |f| %>
+				<div class="field">
+					<div class="input-wrapper">
+  						<%= f.email_field :email, :class => "", :placeholder => "Email address" %>
+					</div>
+				</div>
+				<div class="field">
+					<div class="input-wrapper">
+  						<%= f.text_field :name, :class => "", :placeholder => "Username" %>
+					</div>
+				</div>
+				<div class="field">
+					<div class="input-wrapper">
+  						<%= f.password_field :password, :class => "", :placeholder => "Password" %>
+					</div>
+				</div>
+				<div class="field">
+					<%= f.submit "Sign Up", :class => "btn"%>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

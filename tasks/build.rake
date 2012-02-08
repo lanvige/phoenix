@@ -1,4 +1,4 @@
-ENGINES = %w{ core auth testing }
+ENGINES = %w{ core authentication }
 
 require File.expand_path('../../core/lib/phoenix/version', __FILE__)
 version = Phoenix::Version.to_s
@@ -28,7 +28,6 @@ root = File.expand_path('../../', __FILE__)
     
     task :install_gem do
       cmd = ""
-      cmd << "cd #{engine} && " unless engine == "phoenix"
       cmd << "gem install  #{root}/pkg/#{engine_name}-#{version}.gem"
       sh cmd
     end
@@ -38,6 +37,13 @@ root = File.expand_path('../../', __FILE__)
       cmd << "gem uninstall #{engine_name} -a"
       sh cmd
     end
+    
+    task  :publish_gem do
+      cmd = ""
+      cmd << "gem push #{engine_name}"
+      sh cmd
+    end
+    
 
     task :build_gem => [:clean_gem, :package]
   end
@@ -48,4 +54,5 @@ namespace :phoenix do
   task :build => ENGINES.map { |e| "#{e}:build_gem" } + ['phoenix:build_gem']
   task :install => ENGINES.map { |e| "#{e}:install_gem" } + ['phoenix:install_gem']
   task :uninstall => ENGINES.map { |e| "#{e}:uninstall_gem" } + ['phoenix:uninstall_gem']
+  task :publish => ENGINES.map { |e| "#{e}:publish_gem" } + ['phoenix:publish_gem']
 end

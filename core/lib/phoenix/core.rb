@@ -3,11 +3,11 @@ require "active_resource/railtie"
 require "active_support/railtie"
 require 'rails/generators'
 
-require 'rbconfig'
+#require 'rbconfig'
 
 require 'haml'
 require 'jquery-rails'
-require 'simple_form'
+#require 'simple_form'
 
 module Phoenix
   
@@ -143,6 +143,7 @@ module Phoenix
       end
     end
   end
+  
 end
 
 
