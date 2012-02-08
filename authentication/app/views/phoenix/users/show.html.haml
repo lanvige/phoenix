@@ -1,12 +1,8 @@
 %h2
   User Info
   
-%h4
-  The activity of user xxx.
-  
-- if current_user
+- if @user
   = @user.name
   %br
   = @user.email
   %br
-  = link_to "Profile", user_profiles_url(current_user)

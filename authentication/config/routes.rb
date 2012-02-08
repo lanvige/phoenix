@@ -17,5 +17,6 @@ Phoenix::Core::Engine.routes.draw do
     #get "confirmation" => "confirmations#new", :as => :confirmation
   end
 
-  resources :users, :only => [:index, :show, :edit, :update]
+  resources :users, :only => [:index, :show]
+  resource :profile, :only => [:edit, :update]
 end

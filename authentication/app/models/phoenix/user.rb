@@ -4,7 +4,7 @@ module Phoenix
     include Mongoid::Timestamps
     include Mongoid::Slug
     
-    #embeds_one :profile
+    embeds_one :profile
     
     # Set the collection name in MongoDB
     self.collection_name = 'users' 
