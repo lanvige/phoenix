@@ -5,8 +5,13 @@ module Phoenix
     
     embedded_in :user
     
-    field :real_name
-    field :address
+    field :first_name
+    field :last_name
+    field :photo
+    field :gender
+    field :bio
+    field :birthday
+    field :location
     
     attr_accessible :address
   end

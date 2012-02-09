@@ -1,4 +1,9 @@
 Phoenix::Core::Engine.routes.draw do
+  
+  resources :users, :only => [:index, :show, :edit, :update, ]
+  resource :profile, :only => [:edit, :update]
+  match 'users/edit' => redirect('/user/edit')
+  
   devise_for :users, {
     class_name:   'Phoenix::User',
     module: :devise,
@@ -17,6 +22,5 @@ Phoenix::Core::Engine.routes.draw do
     #get "confirmation" => "confirmations#new", :as => :confirmation
   end
 
-  resources :users, :only => [:index, :show]
-  resource :profile, :only => [:edit, :update]
+
 end
