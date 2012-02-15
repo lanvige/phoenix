@@ -1,7 +1,5 @@
 Phoenix::Core::Engine.routes.draw do
   
-  resources :users, :only => [:index, :show, :edit, :update, ]
-  resource :profile, :only => [:edit, :update]
   match 'users/edit' => redirect('/user/edit')
   
   devise_for :users, {
@@ -15,13 +13,13 @@ Phoenix::Core::Engine.routes.draw do
     }
 
   devise_scope :user do
-    get '/signup' => 'registrations#new', :as => :signup
-    get '/login' => 'sessions#new', :as => :login
-    get "/logout" => "sessions#destroy", :as => :logout
+    get 'signup' => 'registrations#new', :as => :signup
+    post 'login' => 'sessions#new', :as => :login
+    delete "logout" => "sessions#destroy", :as => :logout
     #get "forgot_password" => "passwords#new", :as => :forgotpassword
     #get "confirmation" => "confirmations#new", :as => :confirmation
   end
 
-  resources :users, :only => [:index, :show]
-  resource :profile, :only => [:edit, :update]
+  #resources :users, :only => [:index, :show]
+  #resource :profile, :only => [:edit, :update]
 end

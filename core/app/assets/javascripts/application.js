@@ -9,6 +9,7 @@
 //= require underscore-1.2.3
 //= require backbone-0.5.3
 //= require jquery
+//= require jquery_ujs
 
 // require_tree .
 //= require_self

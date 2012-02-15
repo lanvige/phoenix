@@ -1,5 +1,8 @@
 module Phoenix
   class HomeController < BaseController
+
+    layout "/phoenix/layouts/application"
+    
     def index
       #RubyProf.start
       "hello world!"
