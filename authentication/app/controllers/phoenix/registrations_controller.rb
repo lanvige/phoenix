@@ -5,7 +5,7 @@ module Phoenix
     #before_filter :check_registrations_open!
     #ssl_required
     
-    layout "/phoenix/layouts/site"
+    layout "/phoenix/layouts/application"
 
     def new
       super
