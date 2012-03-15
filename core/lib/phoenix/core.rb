@@ -7,7 +7,8 @@ require 'rails/generators'
 
 require 'haml'
 require 'jquery-rails'
-#require 'bootstrap-sass'
+require 'bootstrap-sass'
+require 'requirejs-rails'
 
 module Phoenix
   
