@@ -1,15 +1,23 @@
--// This is a manifest file that'll be compiled into including all the files listed below.
--// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
--// be included in the compiled file accessible from http://example.com/assets/application.js
--// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
--// the compiled file.
--//
--
-//= require require-1.0.2
-//= require underscore-1.2.3
--//= require backbone-0.5.3
--//= require jquery
--//= require jquery_ujs
--
--// require_tree .
--//= require_self
+### Main js for requirejs ###
+
+require.config({
+    baseUrl : ".",
+    paths : {
+        "jquery" : "assets/jquery/_jquery",
+        "backbone" : "assets/backbone/_backbone",
+        "mustache" : "assets/mustache/_mustache",
+        "modernizr" : "assets/modernizr/_modernizr",
+        "underscore" : "assets/underscore/_underscore"
+    },
+    waitSeconds : 15,
+    locale : "fr-fr",
+    urlArgs:"site-versiodln"
+});
+
+require [
+    'assets/order!jquery',
+    'assets/order!underscore',
+    'assets/order!backbone'
+], ($,_,Backbone) ->
+  (id) ->
+    alert("ddd");
