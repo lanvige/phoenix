@@ -17,4 +17,4 @@ require [
   'assets/order!underscore'
   'assets/order!backbone'
 ], ($,_,Backbone) ->
-  alert("ddd")
+  ###alert("ddd")###

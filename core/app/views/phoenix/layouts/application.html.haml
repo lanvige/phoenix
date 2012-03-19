@@ -9,15 +9,16 @@
     /[if lt IE 9]
       = javascript_include_tag "html5"
     = stylesheet_link_tag :application, :media => "all"
-    = requirejs_include_tag "application"
+    /= requirejs_include_tag "application"
+    = javascript_include_tag "application"
 
-  %body
-    %header
+  %body{ :'data-spy' => "scroll", :'data-target' => ".subnav", :'data-offsite' => "50", :'data-twttr-rendered' => "true"}
+    .container{ :style => "margin-top:6px" }
       = render :partial => 'phoenix/shared/header'
 
-  #body
-    #main
-      = yield
+      #body
+        #main
+          = yield
 
-  %footer
-    = render :partial => 'phoenix/shared/footer'
+      %footer
+        = render :partial => 'phoenix/shared/footer'
