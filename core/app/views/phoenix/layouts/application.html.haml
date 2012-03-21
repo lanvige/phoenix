@@ -1,0 +1,25 @@
+-# Copyright (c) 2011-2012, Phoenix engine.
+
+!!!
+%html
+  %head
+    %title Phoenix Engine
+    %meta{:charset => "utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    = csrf_meta_tags
+    /[if lt IE 9]
+      = javascript_include_tag "html5"
+    = stylesheet_link_tag :application, :media => "all"
+    /= requirejs_include_tag "application"
+    = javascript_include_tag "application"
+
+  %body
+    /.container
+    = render :partial => 'phoenix/shared/header'
+
+    .container
+      = yield
+
+      %footer
+        = render :partial => 'phoenix/shared/footer'

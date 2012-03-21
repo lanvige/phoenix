@@ -5,10 +5,8 @@
 // the compiled file.
 //
 
-//= require require-1.0.2
-//= require underscore-1.2.3
-//= require backbone-0.5.3
 //= require jquery
+//= require bootstrap
 
 // require_tree .
 //= require_self

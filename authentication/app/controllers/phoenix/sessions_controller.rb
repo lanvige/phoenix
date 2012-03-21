@@ -2,11 +2,10 @@ module Phoenix
   class SessionsController < Devise::SessionsController
     include Phoenix::Core::ControllerHelpers
     
-    layout "/phoenix/layouts/site"
+    layout "/phoenix/layouts/application"
 
     # GET /resource/sign_in
     def new
-      logger.debug("___________________________________________________________________")
       super
     end
 

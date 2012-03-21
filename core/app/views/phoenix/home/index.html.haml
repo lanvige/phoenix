@@ -1,26 +1,24 @@
-%h1
-  hello world
-  
-- if current_user
-  = link_to current_user.name.to_s, user_path(current_user)
+-# Copyright (c) 2011-2012, Phoenix engine.
 
-%br
-/ 
-/ = link_to 'Log In', login_path
-/ %br
-/ = link_to 'Sign UP', signup_path
-/ %br
-/ = link_to 'logout', logout_path
+.hero-unit
+  %h1 Hello, phoenix!
+  %p Phoenix is a engine base on Rails 3. build with multiple rails engines, to show how to use the rails 3 new features, and crate a real scable site. Meanwhile you can learn much web skills in this project, like backbone, requirejs, mongodb and so on...
+  %p
+    %a.btn.btn-primary.btn-large Learn more »
 
-- if user_signed_in?
-  %li
-    = link_to('Logout', destroy_user_session_path, :method=>'delete')
-- else
-  %li
-    = link_to('Login', new_user_session_path)
-- if user_signed_in?
-  %li
-    = link_to('Edit account', edit_user_registration_path)
-- else
-  %li
-    = link_to('Sign up', new_user_registration_path)
+.row
+  .span4
+    %h2 Architecture
+    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    %p
+      %a.btn{:href => "#"} View details »
+  .span4
+    %h2 Scable Web
+    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    %p
+      %a.btn{:href => "#"} View details »
+  .span4
+    %h2 More than Rails
+    %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+    %p
+      %a.btn{:href => "#"} View details »

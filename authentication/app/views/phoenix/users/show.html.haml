@@ -1,12 +1,16 @@
-%h2
-  User Info
+-# Copyright (c) 2011-2012, Phoenix engine.
+
+%h2 User Info
   
-%h4
-  The activity of user xxx.
-  
-- if current_user
+%br
+- if @user
   = @user.name
   %br
   = @user.email
-  %br
-  = link_to "Profile", user_profiles_url(current_user)
+
+%br
+%br
+= link_to 'Setting', edit_user_path
+%br
+= link_to 'Eidt my profile', edit_profile_path
+

@@ -1,7 +1,7 @@
 module Phoenix
   class PasswordsController < Devise::PasswordsController
     
-    layout "/phoenix/layouts/site"
+    layout "/phoenix/layouts/application"
     
     def create
       super
