@@ -3,6 +3,9 @@ require 'devise'
 
 module Phoenix
   module Authentication
+    def self.config(&block)
+      yield(Phoenix::Authentication::Config)
+    end
   end
 end
 

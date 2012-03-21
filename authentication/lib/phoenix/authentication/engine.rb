@@ -1,5 +1,3 @@
-require 'mongoid'
-
 module Phoenix
   module Authentication
     class Engine < Rails::Engine
