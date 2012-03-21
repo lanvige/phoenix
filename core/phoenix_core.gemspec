@@ -24,11 +24,15 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'rails',                '~> 3.2.1'
+  s.add_dependency 'rails',                '~> 3.2.2'
   s.add_dependency 'jquery-rails',         '>= 1.0.17'
   s.add_dependency 'haml'
   s.add_dependency 'haml-rails'
 
+  s.add_dependency 'mongoid'
+  s.add_dependency 'bson_ext'
+  s.add_dependency 'mongoid_slug'
+  
   s.add_dependency 'sass-rails'
   s.add_dependency 'bootstrap-sass'
 

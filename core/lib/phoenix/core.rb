@@ -5,6 +5,9 @@ require 'rails/generators'
 
 #require 'rbconfig'
 
+require 'mongoid'
+require 'mongoid_slug'
+
 require 'haml'
 require 'jquery-rails'
 require 'bootstrap-sass'
