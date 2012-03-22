@@ -1,16 +1,37 @@
 require "spec_helper"
 
 module Phoenix
-  describe RegistrationsController do
-    #let(:user) { FactoryGirl.create(:user) }
-    
-    describe "#new" do
-      it "should render the new template" do
-        get "new"
+  describe UsersController do
+
+    before (:each) do
+      @user = FactoryGirl.create(:user)
+      sign_in @user
+    end
+
+    describe "GET 'show'" do
+      
+      it "should be successful" do
+        get :show, :id => @user.id
         response.should be_success
-        response.should render_template("refinery/admin/users/new")
+      end
+      
+      it "should find the right user" do
+        get :show, :id => @user.id
+        assigns(:user).should == @user
       end
     end
-    
+
+  end
+
+
+  describe HomeController do
+
+    describe "GET 'index'" do
+      it "should be successful" do
+        get 'index'
+        response.should be_success
+      end
+    end
+
   end
 end
